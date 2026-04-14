@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Βυζαντινή Ιστορία</title>
+  <meta property="og:title" content="Βυζαντινή Ιστορία - Χωρίς Άγχος για τις Εξετάσεις">
+  <meta property="og:description" content="Επανάληψη βασικών ενοτήτων για την Ιστορία Β΄ Γυμνασίου.">
+  <meta property="og:image" content="https://pdomvros-education.github.io/examrevision-history-b/image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pdomvros-education.github.io/examrevision-history-b/">
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --ink: #213547;
+      --muted: #5d6d7e;
+      --primary: #1f4e79;
+      --primary-2: #2d6ca2;
+      --accent: #b23a48;
+      --accent-soft: #f8e8ea;
+      --line: #d9e2ec;
+      --shadow: 0 12px 30px rgba(31, 78, 121, 0.08);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(180deg, #eef3f8 0%, #f8fafc 100%);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    header {
+      position: relative;
+      background: linear-gradient(135deg, #17324d 0%, #245984 55%, #2d6ca2 100%);
+      color: white;
+      padding: 2.2rem 1.5rem 1.9rem;
+      overflow: hidden;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-right: 170px;
+    }
+
+    .header-badge {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.18);
+      font-size: 0.92rem;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.9rem;
+    }
+
+    header h1 {
+      margin: 0 0 0.3rem;
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.1;
+    }
+
+    .title-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .title-img {
+      width: clamp(72px, 10vw, 120px);
+      height: clamp(72px, 10vw, 120px);
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid rgba(255,255,255,0.22);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+      background: rgba(255,255,255,0.12);
+      flex-shrink: 0;
+    }
+
+    .header-text {
+      min-width: 0;
+    }
+
+    .header-text h1 {
+      margin: 0;
+    }
+
+    .header-subtitle {
+      margin: 0;
+      max-width: 820px;
+      color: rgba(255,255,255,0.92);
+      font-size: 1.05rem;
+    }
+
+    .header-logo {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      background: #ffffff;
+      border: none;
+      border-radius: 50%;
+      padding: 4px;
+      backdrop-filter: none;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      padding: 0.9rem 1rem;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(26, 54, 93, 0.06);
+    }
+
+    nav button {
+      border: none;
+      background: white;
+      color: var(--primary);
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      font-size: 0.96rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--line);
+      transition: all 0.25s ease;
+    }
+
+    nav button:hover {
+      transform: translateY(-1px);
+      border-color: var(--primary-2);
+    }
+
+    nav button.active {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+      box-shadow: 0 10px 18px rgba(178, 58, 72, 0.18);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 1.3rem auto 2rem;
+      padding: 0 1rem;
+    }
+
+    .section {
+      display: none;
+      animation: fadeIn 0.22s ease;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid rgba(217, 226, 236, 0.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      margin: 0 0 0.35rem;
+      color: var(--primary);
+      font-size: clamp(1.6rem, 2.1vw, 2.1rem);
+    }
+
+    .section-intro {
+      margin: 0 0 1.2rem;
+      color: var(--muted);
+      max-width: 900px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+    }
+
+    .hero-main {
+      grid-column: span 8;
+    }
+
+    .hero-side {
+      grid-column: span 4;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .note-box {
+      background: linear-gradient(180deg, #f8fbff 0%, #eff6fc 100%);
+      border: 1px solid #d6e4f2;
+      border-left: 6px solid var(--primary-2);
+      border-radius: 16px;
+      padding: 1rem 1rem 1rem 1.1rem;
+    }
+
+    .note-box h3 {
+      margin: 0 0 0.45rem;
+      color: var(--primary);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.9rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      border-radius: 999px;
+      padding: 0.4rem 0.8rem;
+      background: #eef5fb;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.92rem;
+      border: 1px solid #d7e6f5;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .overview-card {
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1rem;
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+      min-height: 145px;
+    }
+
+    .overview-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      flex: 0 0 44px;
+    }
+
+    .overview-card h4 {
+      margin: 0 0 0.35rem;
+      color: var(--primary);
+      font-size: 1.02rem;
+      line-height: 1.3;
+    }
+
+    .overview-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .timeline-item {
+      background: white;
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--accent);
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    }
+
+    .timeline-date {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-text {
+      color: var(--ink);
+    }
+
+    .units-topbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 0 0 1rem;
+    }
+
+    .unit-chip {
+      text-decoration: none;
+      color: var(--primary);
+      background: #eef5fb;
+      border: 1px solid #d7e6f5;
+      border-radius: 999px;
+      padding: 0.45rem 0.85rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .units-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .unit-collapsible {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 12px 24px rgba(19, 55, 90, 0.05);
+      overflow: hidden;
+    }
+
+    .unit-collapsible summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1.05rem 1.15rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      background: linear-gradient(180deg, #ffffff 0%, #f9fbfd 100%);
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 1.08rem;
+    }
+
+    .unit-collapsible summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .unit-summary-title {
+      line-height: 1.35;
+    }
+
+    .unit-summary-hint {
+      flex: 0 0 auto;
+      border-radius: 999px;
+      padding: 0.32rem 0.72rem;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .unit-collapsible[open] .unit-summary-hint {
+      background: #eef5fb;
+      color: var(--primary);
+    }
+
+    .unit-collapsible-body {
+      padding: 0 1.15rem 1.15rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .unit-collapsible-body h4 {
+      margin: 1rem 0 0.4rem;
+      color: var(--accent);
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    .point-list {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+
+    .point-list li {
+      margin: 0 0 0.45rem;
+      color: var(--ink);
+    }
+
+    .flashcard-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .flashcard {
+      width: 100%;
+      min-height: 170px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .flashcard-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 170px;
+      transition: transform 0.65s;
+      transform-style: preserve-3d;
+    }
+
+    .flashcard.flipped .flashcard-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flashcard-front, .flashcard-back {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+      box-shadow: 0 16px 26px rgba(0,0,0,0.08);
+    }
+
+    .flashcard-front {
+      background: linear-gradient(135deg, #2a5d87 0%, #3e7bb1 100%);
+      color: white;
+      font-size: 1.16rem;
+      font-weight: 800;
+    }
+
+    .flashcard-back {
+      transform: rotateY(180deg);
+      background: linear-gradient(135deg, #b23a48 0%, #d06c77 100%);
+      color: white;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .source-layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 1rem;
+    }
+
+    .source-sidebar {
+      background: #fbfdff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1rem;
+    }
+
+    .source-sidebar label {
+      display: block;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .source-selector {
+      width: 100%;
+      padding: 0.8rem 0.9rem;
+      border-radius: 14px;
+      border: 1px solid #c9d8e7;
+      font-size: 0.97rem;
+      color: var(--ink);
+      background: white;
+    }
+
+    .source-count {
+      margin-top: 0.85rem;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .source-main {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1.2rem;
+    }
+
+    .source-main h3 {
+      margin: 0 0 0.85rem;
+      color: var(--primary);
+      font-size: 1.3rem;
+    }
+
+    .source-box {
+      background: #f3f8fc;
+      border-left: 5px solid var(--primary-2);
+      border-radius: 0 16px 16px 0;
+      padding: 1rem 1.1rem;
+      font-style: italic;
+      line-height: 1.75;
+      color: #22384c;
+      white-space: pre-wrap;
+    }
+
+    .source-author {
+      margin-top: 0.8rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .source-tip {
+      margin-top: 1rem;
+      background: #fff7df;
+      border-left: 5px solid #f1c40f;
+      border-radius: 0 16px 16px 0;
+      padding: 0.95rem 1rem;
+      color: #5f4c06;
+    }
+
+    .fulltext-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .small-btn {
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--primary);
+      border-radius: 999px;
+      padding: 0.55rem 0.9rem;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .fulltext-item {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      margin-bottom: 0.9rem;
+      overflow: hidden;
+      box-shadow: 0 10px 22px rgba(15, 35, 55, 0.05);
+    }
+
+    .fulltext-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1rem 1.1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+      background: linear-gradient(180deg, #ffffff 0%, #f9fbfd 100%);
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
+    .fulltext-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .fulltext-item summary span {
+      color: var(--accent);
+      font-weight: 800;
+      background: var(--accent-soft);
+      border-radius: 999px;
+      padding: 0.28rem 0.65rem;
+      font-size: 0.86rem;
+    }
+
+    .fulltext-body {
+      padding: 0 1.1rem 1.1rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .fulltext-body h3 {
+      color: var(--primary);
+      margin-top: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .fulltext-body h4 {
+      color: var(--accent);
+      margin: 1rem 0 0.45rem;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 0.9rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 420px;
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid #dfe7ef;
+      padding: 0.75rem 0.85rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #edf4fb;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    footer {
+      max-width: 1200px;
+      margin: 2rem auto 3rem;
+      padding: 1rem 1.2rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.98rem;
+    }
+
+    .footer-strong {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 960px) {
+      .hero-main, .hero-side {
+        grid-column: span 12;
+      }
+      .source-layout {
+        grid-template-columns: 1fr;
+      }
+      .header-inner {
+        padding-right: 0;
+      }
+      .header-logo {
+        position: static;
+        display: block;
+        width: 92px;
+        height: 92px;
+        margin: 0.8rem 0 0 auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding: 1.6rem 1rem 1.4rem;
+      }
+      .title-row {
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+      .title-img {
+        width: 64px;
+        height: 64px;
+      }
+      nav {
+        justify-content: flex-start;
+      }
+      nav button {
+        font-size: 0.92rem;
+      }
+      .container {
+        padding: 0 0.7rem;
+      }
+      .panel {
+        padding: 1rem;
+      }
+      .flashcard-front, .flashcard-back {
+        padding: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="title-row">
+        <img src="image.png" alt="Εικόνα ενότητας" class="title-img">
+        <div class="header-text">
+          <h1>Βυζαντινή Ιστορία</h1>
+          <h1>Χωρίς Άγχος για τις Εξετάσεις</h1>
+        </div>
+      </div>
+      <h2>Μέρος Α': Από την ίδρυση ως την άλωση της Κωνσταντινούπολης</h2>
+      <p class="header-subtitle">Μία επανάληψη βασικών ενοτήτων που <strong>συνήθως</strong> αποτελούν ύλη για τις εξετάσεις της Ιστορίας Β' Γυμνασίου. Να χρησιμοποιηθεί <strong>ΜΟΝΟ</strong> μετά από υπόδειξη των εκπαιδευτικών που σας διδάσκουν το μάθημα. Καλή δύναμη με το διάβασμά σας!</p>
+      <img class="header-logo" src="logo-GR.png" onerror="this.onerror=null;this.src='logo_GR.png';" alt="Λογότυπο">
+    </div>
+  </header>
+
+  <nav>
+    <button class="tab-btn active" data-section="overview" onclick="showSection('overview', this)">Επισκόπηση</button>
+    <button class="tab-btn" data-section="timeline" onclick="showSection('timeline', this)">Χρονογραμμή</button>
+    <button class="tab-btn" data-section="units" onclick="showSection('units', this)">Ενότητες</button>
+    <button class="tab-btn" data-section="flashcards" onclick="showSection('flashcards', this)">Κάρτες Μνήμης</button>
+    <button class="tab-btn" data-section="sources" onclick="showSection('sources', this)">Βιβλιοθήκη Πηγών</button>
+  </nav>
+
+  <main class="container">
+    <section id="overview" class="section active">
+     
+
+
+
+        <div class="overview-grid">
+          <div class='overview-card'><div><h4>Από τη Ρώμη στη Νέα Ρώμη</h4><p>1. Η Ίδρυση της Κωνσταντινούπολης (330 μ.Χ.)</p></div></div><div class='overview-card'><div><h4>Ο Ιουστινιανός Α΄ και το έργο του (527-565)</h4><p>1. Το Πολιτικό Πρόγραμμα</p></div></div><div class='overview-card'><div><h4>Ο Ηράκλειος και η δυναστεία του (610-717)</h4><p>1. Το Βυζάντιο σε κρίση</p></div></div><div class='overview-card'><div><h4>Η Διαμόρφωση της Μεσαιωνικής Ελληνικής Βυζαντινής Αυτοκρατορίας</h4><p>1. Μόνιμες Αλλαγές και Σύνορα</p></div></div><div class='overview-card'><div><h4>Η Εικονομαχία: Η σύγκρουση για τις εικόνες (8ος - 9ος αιώνας)</h4><p>1. Τι ήταν η Εικονομαχία;</p></div></div><div class='overview-card'><div><h4>Η εποχή του Μιχαήλ Γ΄: Η αυγή της Νέας Εποχής</h4><p>1. Μια Νέα Εποχή ξεκινά</p></div></div><div class='overview-card'><div><h4>Κοινωνία και Οικονομία: Το Κράτος απέναντι στους &quot;Δυνατούς&quot;</h4><p>1. Οι Κοινωνικές Τάξεις στην Ύπαιθρο</p></div></div><div class='overview-card'><div><h4>Η Βυζαντινή Εποποιία: Επικοί αγώνες και επέκταση</h4><p>1. Οι μεγάλες νίκες εναντίον των Αράβων</p></div></div><div class='overview-card'><div><h4>Η Κρίση, οι Κομνηνοί και το Σχίσμα (11ος - 12ος αιώνας)</h4><p>1. Η Μεγάλη Κρίση και οι Ήττες (1025-1081)</p></div></div><div class='overview-card'><div><h4>Οι Σταυροφορίες και η Πτώση της Κωνσταντινούπολης (11ος - 13ος αιώνας)</h4><p>1. Τι ήταν οι Σταυροφορίες και γιατί ξεκίνησαν;</p></div></div><div class='overview-card'><div><h4>Η Άλωση της Πόλης και η Κληρονομιά του Βυζαντίου</h4><p>1. Η Πολιορκία και η Πτώση (1453)</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline" class="section">
+      <div class="panel">
+        <h2 class="section-title">Πλήρης Χρονογραμμή</h2>
+        <p class="section-intro">Συγκεντρωμένα όλα τα χρονολογημένα γεγονότα και οι βασικές περίοδοι που αναφέρονται στα κείμενα της σελίδας, από το Διάταγμα των Μεδιολάνων έως την Άλωση της Κωνσταντινούπολης.</p>
+        <div class="timeline-grid">
+          <div class='timeline-item'><div class='timeline-date'>313</div><div class='timeline-text'>Διάταγμα των Μεδιολάνων: κατοχυρώνεται η ελευθερία της χριστιανικής λατρείας.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>324</div><div class='timeline-text'>Ο Κωνσταντίνος νικά τον Λικίνιο και αποφασίζει την ίδρυση της νέας πρωτεύουσας.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>325</div><div class='timeline-text'>Α΄ Οικουμενική Σύνοδος στη Νίκαια.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>11 Μαΐου 330</div><div class='timeline-text'>Εγκαίνια της Κωνσταντινούπολης (Νέας Ρώμης).</div></div>
+          <div class='timeline-item'><div class='timeline-date'>5ος αιώνας</div><div class='timeline-text'>Η Κωνσταντινούπολη φτάνει περίπου τους 150.000 κατοίκους.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>527–565</div><div class='timeline-text'>Βασιλεία Ιουστινιανού Α΄.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>529</div><div class='timeline-text'>Κλείσιμο της Νεοπλατωνικής Ακαδημίας στην Αθήνα.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>529–534</div><div class='timeline-text'>Κωδικοποίηση του Δικαίου από τον Ιουστινιανό.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>532</div><div class='timeline-text'>Στάση του Νίκα και έναρξη της ανοικοδόμησης της Αγίας Σοφίας.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>532–537</div><div class='timeline-text'>Ανέγερση της Αγίας Σοφίας.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>537</div><div class='timeline-text'>Ολοκλήρωση της Αγίας Σοφίας.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>562</div><div class='timeline-text'>Συνθήκη ειρήνης του Ιουστινιανού με τους Πέρσες.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>τέλη 6ου – αρχές 7ου αιώνα</div><div class='timeline-text'>Λοιμοί, κακές σοδειές, σεισμοί και γενική κρίση στην αυτοκρατορία.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>610–717</div><div class='timeline-text'>Εποχή Ηρακλείου και της δυναστείας του.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>626</div><div class='timeline-text'>Αποτυχία Αβάρων και Σλάβων στην πολιορκία της Κωνσταντινούπολης.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>627</div><div class='timeline-text'>Νίκη του Ηρακλείου στη Νινευί εναντίον των Περσών.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>7ος αιώνας</div><div class='timeline-text'>Αρχίζουν οι μεγάλες αλλαγές που οδηγούν στη μεσαιωνική ελληνική βυζαντινή αυτοκρατορία.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>726–787</div><div class='timeline-text'>Α΄ φάση της Εικονομαχίας.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>787</div><div class='timeline-text'>Σύνοδος που αποκαθιστά προσωρινά τις εικόνες.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>8ος αιώνας</div><div class='timeline-text'>Αρχίζει η οικονομική ανάκαμψη και ενισχύεται το σύστημα των θεμάτων.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>8ος–9ος αιώνας</div><div class='timeline-text'>Η αυτοκρατορία αποκτά εντονότερο ελληνικό χαρακτήρα και σταθεροποιεί νέες δομές.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>815–843</div><div class='timeline-text'>Β΄ φάση της Εικονομαχίας.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>838</div><div class='timeline-text'>Άλωση του Αμορίου από τους Άραβες.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>842–867</div><div class='timeline-text'>Βασιλεία Μιχαήλ Γ΄ και αρχή νέας περιόδου ανόδου.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>843</div><div class='timeline-text'>Οριστική αναστήλωση των εικόνων.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>μέσα 9ου αιώνα</div><div class='timeline-text'>Το Βυζάντιο περνά στη στρατιωτική αντεπίθεση στη Μικρά Ασία.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>859</div><div class='timeline-text'>Βυζαντινή νίκη κατά των Αράβων.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>863</div><div class='timeline-text'>Νέα βυζαντινή νίκη κατά των Αράβων.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>922–1002</div><div class='timeline-text'>Οι «Νεαρές» της Μακεδονικής δυναστείας προστατεύουν τους μικρούς αγρότες.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>961</div><div class='timeline-text'>Ανακατάληψη της Κρήτης.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>965</div><div class='timeline-text'>Ανακατάληψη της Κύπρου.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>997</div><div class='timeline-text'>Νίκη κατά των Βουλγάρων στον Σπερχειό.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>1002</div><div class='timeline-text'>Εφαρμογή του Αλληλέγγυου: οι Δυνατοί πληρώνουν τους φόρους των φτωχών.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>1014</div><div class='timeline-text'>Μάχη στο Κλειδί.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>1018</div><div class='timeline-text'>Οριστική υποταγή της Βουλγαρίας.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>1025</div><div class='timeline-text'>Θάνατος του Βασιλείου Β΄ και αρχή εσωτερικής αποδυνάμωσης.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>1025–1081</div><div class='timeline-text'>Μεγάλη κρίση για το Βυζάντιο.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>1054</div><div class='timeline-text'>Οριστικό Σχίσμα Ανατολικής και Δυτικής Εκκλησίας.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>1071</div><div class='timeline-text'>Ήττα στο Ματζικέρτ και απώλεια του Μπάρι.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>1082</div><div class='timeline-text'>Χρυσόβουλο του Αλεξίου Α΄ προς τους Βενετούς.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>1096–1099</div><div class='timeline-text'>Α΄ Σταυροφορία.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>1176</div><div class='timeline-text'>Ήττα στο Μυριοκέφαλο.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>1192</div><div class='timeline-text'>Απώλεια της Κύπρου στους Φράγκους.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>1204</div><div class='timeline-text'>Άλωση της Κωνσταντινούπολης από τους Σταυροφόρους.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>7ος–8ος αιώνας</div><div class='timeline-text'>Το Βυζάντιο λειτουργεί ως ασπίδα της Ευρώπης απέναντι στις αραβικές επιθέσεις.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>6 Απριλίου – 29 Μαΐου 1453</div><div class='timeline-text'>Διάρκεια της τελικής οθωμανικής πολιορκίας της Κωνσταντινούπολης.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>29 Μαΐου 1453</div><div class='timeline-text'>Οριστική Άλωση της Πόλης από τους Οθωμανούς.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="units" class="section">
+
+              <div class="panel">
+        <h2 class="section-title">Ενότητες</h2>
+                <div class="units-grid">
+          <details class="unit-collapsible" id="unit-1">
+          <summary>
+            <span class="unit-summary-title">Από τη Ρώμη στη Νέα Ρώμη</span>
+            <span class="unit-summary-hint">Άνοιγμα</span>
+          </summary>
+          <div class="unit-collapsible-body"><h4>1. Η Ίδρυση της Κωνσταντινούπολης (330 μ.Χ.)</h4><ul class='point-list'><li>Πότε: Ο Κωνσταντίνος αποφάσισε την ίδρυση μετά τη νίκη του επί του Λικινίου (324), όταν έμεινε μονοκράτορας.</li><li>Πού: Στη θέση του αρχαίου Βυζαντίου, στο σταυροδρόμι Ασίας - Ευρώπης και Ευξείνου Πόντου - Μεσογείου.</li><li>Γιατί επιλέχθηκε η Ανατολή:</li><li>Είχε ακμαίο πληθυσμό και οικονομία σε σχέση με τη Δύση.</li><li>Εκεί ζούσαν οι περισσότεροι Χριστιανοί, στους οποίους στηρίχθηκε πολιτικά.</li><li>Επέτρεπε την ευκολότερη απόκρουση Γότθων (Δούναβης) και Περσών (Ευφράτης).</li><li>Πώς χτίστηκε: Σχεδιάστηκε με βάση τη Ρώμη, με νέα τείχη, λεωφόρους, το Φόρουμ του Κωνσταντίνου, το Ιερό Παλάτι και το κτίριο της Συγκλήτου.</li><li>Εγκαίνια: Τελέστηκαν στις 11 Μαΐου 330.</li></ul><h4>2. Θρησκευτική Πολιτική</h4><ul class='point-list'><li>Στόχος: Η χρήση του Χριστιανισμού για την αποκατάσταση της ενότητας του κράτους.</li><li>Διάταγμα των Μεδιολάνων (313): Συμφωνία Κωνσταντίνου και Λικινίου για την ελευθερία της χριστιανικής λατρείας.</li><li>Α΄ Οικουμενική Σύνοδος (325): Συγκλήθηκε στη Νίκαια για την αντιμετώπιση των αιρέσεων και την ειρήνευση της Εκκλησίας.</li><li>Σύμβολα: Μεταφέρθηκε το Χριστόγραμμα από τη σημαία (λάβαρον) στα νομίσματα.</li><li>Προσωπική στάση: Ο Κωνσταντίνος παρέμεινε Ανώτατος Αρχιερέας της παλιάς θρησκείας και βαφτίστηκε Χριστιανός λίγο πριν πεθάνει.</li></ul><h4>3. Διοικητικά και Οικονομικά Μέτρα</h4><ul class='point-list'><li>Διοίκηση: Καθιερώθηκε ο διαχωρισμός της πολιτικής από τη στρατιωτική εξουσία.</li><li>Οικονομία: Κυκλοφόρησε ένα ιδιαίτερα σταθερό χρυσό νόμισμα.</li></ul><h4>4. Η Εξέλιξη της Πόλης</h4><ul class='point-list'><li>Η Κωνσταντινούπολη ονομάστηκε Νέα Ρώμη και απέκτησε σταδιακά χριστιανικό χαρακτήρα.</li><li>Πληθυσμιακή έκρηξη: Από 150.000 κατοίκους τον 5ο αιώνα, έφτασε τους 300.000 στα χρόνια του Ιουστινιανού.</li><li>Μέσα σε δύο αιώνες ξεπέρασε σε σημασία την Παλαιά Ρώμη.</li></ul></div>
+        </details>
+          <details class="unit-collapsible" id="unit-2">
+          <summary>
+            <span class="unit-summary-title">Ο Ιουστινιανός Α΄ και το έργο του (527-565)</span>
+            <span class="unit-summary-hint">Άνοιγμα</span>
+          </summary>
+          <div class="unit-collapsible-body"><h4>1. Το Πολιτικό Πρόγραμμα</h4><ul class='point-list'><li>Σύνθημα: «Ένα κράτος, μία εκκλησία, μία νομοθεσία».</li><li>Στόχος: Η ανασύσταση της Ρωμαϊκής Οικουμένης (επανάκτηση εδαφών στη Δύση).</li></ul><h4>2. Εσωτερική Πολιτική &amp; Διοίκηση</h4><ul class='point-list'><li>Στάση του Νίκα (532): Καταστολή της εξέγερσης των δήμων του Ιπποδρόμου (Πράσινοι και Βένετοι) με τη βοήθεια της Θεοδώρας.</li><li>Κοινωνία: Προστάτευσε τους ελεύθερους αγρότες και περιόρισε τη δύναμη των μεγάλων γαιοκτημόνων για να εξασφαλίσει φόρους.</li><li>Θρησκεία: Προσπάθησε να επιβάλει την Ορθοδοξία και καταδίωξε αιρέσεις και οπαδούς της αρχαίας θρησκείας.</li><li>Έκλεισε τη Νεοπλατωνική Ακαδημία στην Αθήνα (529).</li><li>Διέδωσε τον Χριστιανισμό στον Καύκασο και την Αφρική.</li></ul><h4>3. Η Κωδικοποίηση του Δικαίου (529-534)</h4><ul class='point-list'><li>Λόγος: Οι νόμοι ήταν πολλοί, σκοτεινοί και γεμάτοι αντιφάσεις.</li><li>Το έργο:</li><li>Ιουστινιάνειος Κώδικας: Αυτοκρατορικοί νόμοι πριν τον Ιουστινιανό.</li><li>Πανδέκτης: Γνώμες Ρωμαίων νομικών.</li><li>Εισηγήσεις: Εγχειρίδιο για φοιτητές Νομικής.</li><li>Νεαρές: Νέοι νόμοι, γραμμένοι κυρίως στα ελληνικά.</li><li>Σημασία: Αποτέλεσε τη βάση του Δικαίου της Νεότερης Ευρώπης.</li></ul><h4>4. Εξωτερική Πολιτική &amp; Πόλεμοι</h4><ul class='point-list'><li>Δύση: Κατέλυσε το Βανδαλικό Βασίλειο (Αφρική) και το Οστρογοτθικό (Ιταλία), ενώ πήρε παράκτιες περιοχές από τους Βησιγότθους (Ισπανία).</li><li>Ανατολή: Αντιμετώπισε τους Πέρσες (Χοσρόης Α΄) και υπέγραψε συνθήκη ειρήνης το 562.</li><li>Βορράς: Έκτισε φρούρια στον Δούναβη, αλλά δεν σταμάτησε τις εισβολές Σλάβων.</li><li>Συνέπειες: Οι πόλεμοι άδειασαν τα κρατικά ταμεία και εξασθένησαν τη διεθνή θέση του Βυζαντίου.</li></ul><h4>5. Οικοδομικό Έργο &amp; Αγία Σοφία</h4><ul class='point-list'><li>Έργα: Φρούρια, τείχη, δρόμοι, γέφυρες και ναοί.</li><li>Αγία Σοφία (532-537):</li><li>Αρχιτέκτονες: Ανθέμιος και Ισίδωρος.</li><li>Ρυθμός: Βασιλική μετά τρούλου.</li><li>Χαρακτηριστικά: Τεράστιος τρούλος που στηρίζεται σε τέσσερις πεσσούς με τη χρήση ημισφαιρικών τριγώνων.</li></ul></div>
+        </details>
+          <details class="unit-collapsible" id="unit-3">
+          <summary>
+            <span class="unit-summary-title">Ο Ηράκλειος και η δυναστεία του (610-717)</span>
+            <span class="unit-summary-hint">Άνοιγμα</span>
+          </summary>
+          <div class="unit-collapsible-body"><h4>1. Το Βυζάντιο σε κρίση</h4><ul class='point-list'><li>Πολλά προβλήματα σε διάφορους τομείς: Στα τέλη του 6ου και αρχές του 7ου αι., η αυτοκρατορία υπέφερε από λοιμούς, κακές σοδειές και σεισμούς.</li><li>Οικονομική και κοινωνική κατάρρευση: Οι πόλεις παρήκμασαν, ο πληθυσμός μειώθηκε και το εμπόριο υποχώρησε.</li><li>Εξωτερικοί εχθροί:</li><li>Οι Σλάβοι κατέκλυζαν τις ευρωπαϊκές επαρχίες.</li><li>Οι Πέρσες έφτασαν μέχρι τον Βόσπορο.</li><li>Ανάγκη για αλλαγή: Η κρίσιμη κατάσταση απαιτούσε ριζική μεταρρύθμιση και κινητοποίηση όλων των δυνάμεων.</li></ul><h4>2. Η Αντεπίθεση και οι Πόλεμοι</h4><ul class='point-list'><li>Στρατηγός-Αυτοκράτορας: Ο Ηράκλειος ηγήθηκε προσωπικά του στρατού.</li><li>Οικονομική στήριξη: Η Εκκλησία βοήθησε οικονομικά στην αναδιοργάνωση του στρατεύματος.</li><li>Νίκη κατά των Περσών: Στη μάχη της Νινευί (627), ο Ηράκλειος συνέτριψε τους Πέρσες και ανέκτησε τις χαμένες επαρχίες.</li><li>Πολιορκία Κωνσταντινούπολης (626): Οι Άβαροι και οι Σλάβοι ηττήθηκαν ταπεινωτικά όταν επιχείρησαν να καταλάβουν την Πόλη.</li><li>Θρησκευτικός χαρακτήρας: Οι εκστρατείες είχαν έντονο χριστιανικό χρώμα, καθώς στόχος ήταν και η ανάκτηση του Τιμίου Σταυρού από τους Πέρσες.</li></ul><h4>3. Τα Θέματα (Διοικητική Μεταρρύθμιση)</h4><ul class='point-list'><li>Ορισμός: Τα θέματα ήταν διοικητικές περιφέρειες με δικό τους στρατό, που ιδρύθηκαν αρχικά στη Μ. Ασία για την άμυνα κατά των Αράβων.</li><li>Στρατιωτόπια: Στους στρατιώτες (ελεύθεροι αγρότες) παραχωρούνταν στρατιωτικά κτήματα.</li><li>Οφέλη:</li><li>Οι στρατιώτες συντηρούσαν τις οικογένειές τους και αγόραζαν τον εξοπλισμό τους από τα έσοδα των κτημάτων.</li><li>Δημιουργήθηκε ένας αποτελεσματικός εθνικός στρατός που αντικατέστησε τους μισθοφόρους.</li><li>Διοίκηση: Ο στρατηγός ένωνε στο πρόσωπό του την πολιτική και τη στρατιωτική εξουσία του θέματος.</li></ul><h4>4. Ο Εξελληνισμός του Κράτους</h4><ul class='point-list'><li>Γλώσσα: Η ελληνική έγινε η επίσημη γλώσσα της διοίκησης και του στρατού.</li><li>Τίτλοι: Οι παλιοί ρωμαϊκοί τίτλοι αντικαταστάθηκαν από ελληνικούς (π.χ. ο στρατηγός αντί για κόμης).</li><li>Νέος Τίτλος Αυτοκράτορα: Ο Ηράκλειος υιοθέτησε πρώτος τον τίτλο «πιστὸς ἐν Χριστῷ βασιλεύς».</li><li>Ιστορική σημασία: Αυτές οι αλλαγές σηματοδότησαν το τέλος της Ρωμαϊκής Αυτοκρατορίας και την αρχή της μεσαιωνικής ελληνικής Βυζαντινής Αυτοκρατορίας.</li></ul></div>
+        </details>
+          <details class="unit-collapsible" id="unit-4">
+          <summary>
+            <span class="unit-summary-title">Η Διαμόρφωση της Μεσαιωνικής Ελληνικής Βυζαντινής Αυτοκρατορίας</span>
+            <span class="unit-summary-hint">Άνοιγμα</span>
+          </summary>
+          <div class="unit-collapsible-body"><h4>1. Μόνιμες Αλλαγές και Σύνορα</h4><ul class='point-list'><li>Μονιμοποίηση αλλαγών: Οι αλλαγές που ξεκίνησαν τον 7ο αιώνα έγιναν πλέον μόνιμα χαρακτηριστικά του κράτους κατά τη διάρκεια του 8ου και 9ου αιώνα.</li><li>Σταθεροποίηση συνόρων: Τα σύνορα με τους Άραβες (Χαλιφάτο) σταθεροποιήθηκαν στη Μικρά Ασία και στη γραμμή Κιλικία-Κύπρος-Κρήτη.</li><li>Αντεπίθεση: Στα μέσα του 9ου αιώνα, το Βυζάντιο ξεκίνησε τη στρατιωτική αντεπίθεση στη Μικρά Ασία.</li><li>Βαλκάνια: Το Βυζάντιο αντιμετώπισε με επιτυχία τους Βουλγάρους και άρχισε να αφομοιώνει τους Σλάβους.</li></ul><h4>2. Ενίσχυση της Ελληνικότητας</h4><ul class='point-list'><li>Ελληνικός χαρακτήρας: Η αυτοκρατορία έγινε πιο ελληνική, ενώ η χρήση της λατινικής γλώσσας περιορίστηκε σημαντικά.</li></ul><h4>3. Διοίκηση και Στρατός (Θέματα)</h4><ul class='point-list'><li>Επέκταση Θεμάτων: Το σύστημα των θεμάτων (διοικητικές περιφέρειες με δικό τους στρατό) επεκτάθηκε σε όλη τη Μικρά Ασία και τα Βαλκάνια.</li><li>Στρατιώτες-Αγρότες: Ο στρατός αποτελούνταν από αγρότες που είχαν δικά τους κτήματα και ήταν υποχρεωμένοι να πολεμούν όταν χρειαζόταν.</li><li>Κοινωνική επίδραση: Οι μισθοφόροι μειώθηκαν και στην ύπαιθρο κυριάρχησαν οι μικρομεσαίοι αγρότες.</li><li>Κίνδυνοι: Οι στρατηγοί που διοικούσαν τα θέματα γίνονταν μερικές φορές επικίνδυνοι για τον αυτοκράτορα και οργάνωναν εξεγέρσεις.</li></ul><h4>4. Οικονομία και τα Μέτρα του Νικηφόρου Α΄</h4><ul class='point-list'><li>Οικονομική ανάκαμψη: Από τον 8ο αιώνα ο πληθυσμός αυξήθηκε, το εμπόριο ζωντάνεψε και τα κρατικά έσοδα μεγάλωσαν.</li><li>Οι «Κακώσεις» του Νικηφόρου Α΄: Πρόκειται για αυστηρά αλλά τολμηρά οικονομικά μέτρα που πήρε ο αυτοκράτορας για να ενισχύσει το κράτος. Μερικά από αυτά ήταν:</li><li>Μεταφορά χριστιανών σε περιοχές όπου ζούσαν Σλάβοι.</li><li>Οι πλούσιοι χωρικοί έπρεπε να πληρώνουν για τον εξοπλισμό των φτωχότερων στρατιωτών.</li><li>Αύξηση φόρων και κατάργηση φοροαπαλλαγών.</li><li>Επιβολή φόρου σε κάθε νοικοκυριό («καπνικός φόρος»).</li><li>Υποχρεωτικά δάνεια σε εφοπλιστές με τόκο, για την ενίσχυση του εμπορίου.</li></ul><h4>5. Συνοπτικός Πίνακας: Ο Στρατιώτης-Αγρότης</h4><div class='table-wrap'><table><thead><tr><th>Χαρακτηριστικό</th><th>Περιγραφή</th></tr></thead><tbody><tr><td>Ιδιοκτησία</td><td>Είχε δικό του κτήμα (στρατιωτόπιο)</td></tr><tr><td>Εξοπλισμός</td><td>Έπρεπε να αγοράζει μόνος του άλογο και όπλα</td></tr><tr><td>Υποχρέωση</td><td>Να παρουσιάζεται για υπηρεσία σε περίπτωση πολέμου</td></tr><tr><td>Σημασία</td><td>Αποτέλεσε τη βάση της άμυνας της αυτοκρατορίας</td></tr></tbody></table></div></div>
+        </details>
+          <details class="unit-collapsible" id="unit-5">
+          <summary>
+            <span class="unit-summary-title">Η Εικονομαχία: Η σύγκρουση για τις εικόνες (8ος - 9ος αιώνας)</span>
+            <span class="unit-summary-hint">Άνοιγμα</span>
+          </summary>
+          <div class="unit-collapsible-body"><h4>1. Τι ήταν η Εικονομαχία;</h4><ul class='point-list'><li>Ήταν μια μεγάλη διαμάχη στο Βυζάντιο (από τις αρχές του 8ου ως τα μέσα του 9ου αι.) για το αν είναι σωστό να προσκυνούμε τις εικόνες ή αν αυτό είναι ειδωλολατρία.</li><li>Πρωταγωνιστές: Η κίνηση ξεκίνησε από τους αυτοκράτορες Λέοντα Γ΄ και Κωνσταντίνο Ε΄.</li><li>Αιτίες:  Οι αυτοκράτορες επηρεάστηκαν από τις αντιλήψεις του Ισλάμ και του Ιουδαϊσμού, που απαγόρευαν τις εικόνες.</li><li>Ήθελαν να περιορίσουν τη μεγάλη επιρροή και τη δύναμη των μοναχών.</li><li>Πίστευαν ότι οι στρατιωτικές ήττες από τους εχθρούς ήταν τιμωρία του Θεού επειδή οι χριστιανοί λάτρευαν εικόνες.</li></ul><h4>2. Οι Δύο Φάσεις της Σύγκρουσης</h4><ul class='point-list'><li>Πρώτη φάση (726-787): Ξεκίνησε όταν απομακρύνθηκε η εικόνα του Χριστού από την Πύλη της Κωνσταντινούπολης. Όσοι υποστήριζαν τις εικόνες (εικονόφιλοι) τιμωρήθηκαν με εξορίες και φυλακίσεις. Μεγάλος υπερασπιστής τους ήταν ο θεολόγος Ιωάννης Δαμασκηνός. Η φάση αυτή τελείωσε χάρη στην αυτοκράτειρα Ειρήνη την Αθηναία, που συγκάλεσε Σύνοδο (787) και ξεκαθάρισε ότι στις εικόνες κάνουμε μόνο τιμητική προσκύνηση.</li><li>Δεύτερη φάση (815-843): Την ξεκίνησε ο αυτοκράτορας Λέων Ε΄. Τελείωσε οριστικά από μια άλλη αυτοκράτειρα, τη Θεοδώρα, με τη Σύνοδο του 843, η οποία προχώρησε στην οριστική αναστήλωση (επανατοποθέτηση) των εικόνων.</li></ul><h4>3. Ποιες ήταν οι συνέπειες;</h4><ul class='point-list'><li>Τέχνη και Πολιτισμός: Πάρα πολλά σημαντικά έργα τέχνης και εικόνες καταστράφηκαν. Στη θέση τους, οι εκκλησίες διακοσμήθηκαν με ζώα, φυτά και απλά σχέδια. Παράλληλα, παραμελήθηκαν τα γράμματα.</li><li>Εξωτερική πολιτική: Η Εικονομαχία έφερε μεγάλο ρήγμα με τη Δύση. Ο Πάπας της Ρώμης δυσαρεστήθηκε, γύρισε την πλάτη στο Βυζάντιο και αναζήτησε συμμαχία στους Φράγκους, μια νέα δύναμη στην Ευρώπη.</li><li>Εκκλησία και Κράτος: Η αποκατάσταση των εικόνων θεωρήθηκε νίκη της ελληνικής παράδοσης. Μετά το τέλος της διαμάχης, το κράτος συνεργάστηκε ομαλά με την Εκκλησία, η οποία αφοσιώθηκε στο ιεραποστολικό της έργο, και τα μοναστήρια άρχισαν ξανά να πληθαίνουν.</li></ul></div>
+        </details>
+          <details class="unit-collapsible" id="unit-6">
+          <summary>
+            <span class="unit-summary-title">Η εποχή του Μιχαήλ Γ΄: Η αυγή της Νέας Εποχής</span>
+            <span class="unit-summary-hint">Άνοιγμα</span>
+          </summary>
+          <div class="unit-collapsible-body"><h4>1. Μια Νέα Εποχή ξεκινά</h4><ul class='point-list'><li>Η άνοδος του Βυζαντίου: Στα χρόνια της βασιλείας του Μιχαήλ Γ΄ (842-867) άρχισε η μεγάλη ανάπτυξη της αυτοκρατορίας.</li><li>Ειρήνη και πρόοδος: Μετά την οριστική λήξη της Εικονομαχίας (843), το κράτος μπόρεσε να ρίξει το βάρος του στην άμυνα απέναντι στους Άραβες και στην ανάπτυξη του πολιτισμού.</li><li>Καίσαρ Βάρδας: Για περίπου δέκα χρόνια, τις υποθέσεις του κράτους τις διαχειριζόταν με μεγάλη ικανότητα ο θείος του Μιχαήλ, ο Βάρδας.</li></ul><h4>2. Τα Γράμματα και η Σχολή της Μαγναύρας</h4><ul class='point-list'><li>Το «Πανεπιστήμιο»: Ο Βάρδας ίδρυσε την ανώτερη Σχολή της Μαγναύρας, κάτι σαν πανεπιστήμιο της εποχής, όπου διδάσκονταν φιλοσοφία, γεωμετρία, αστρονομία και γραμματική.</li><li>Λέων ο Μαθηματικός: Ήταν ο σπουδαίος διευθυντής της σχολής. Η μόρφωσή του ήταν τόσο γνωστή, που μέχρι και οι Άραβες τον παρακάλεσαν να πάει να διδάξει στη Βαγδάτη.</li><li>Αγάπη για τους αρχαίους: Οι λόγιοι (μορφωμένοι άνθρωποι) άρχισαν να ψάχνουν, να μελετούν και να αντιγράφουν παλιά χειρόγραφα των αρχαίων Ελλήνων.</li><li>Ο Φώτιος και η «Μυριόβιβλος»: Ο Φώτιος ήταν ένας πολύ μορφωμένος άνδρας που έγραψε τη «Μυριόβιβλο», ένα τεράστιο βιβλίο όπου παρουσίαζε περίπου 300 άγνωστα αρχαία έργα. Επίσης, επί των ημερών του ξεκίνησε η μεγάλη προσπάθεια για τον εκχριστιανισμό των Σλάβων.</li></ul><h4>3. Πόλεμοι με τους Άραβες και Ακριτικά Τραγούδια</h4><ul class='point-list'><li>Η Άλωση του Αμορίου (838): Ως τα μέσα του 9ου αιώνα, το Βυζάντιο δεχόταν συνεχώς επιθέσεις από τους Άραβες. Το χειρότερο χτύπημα ήταν όταν οι Άραβες κατέλαβαν το Αμόριο, το πιο δυνατό φρούριο της Μικράς Ασίας.</li><li>Η Αντεπίθεση: Αργότερα τα πράγματα άλλαξαν, με τον βυζαντινό στρατό να περνά στην επίθεση και να νικά τους Άραβες (859, 863).</li><li>Οι Ακρίτες και η ποίηση: Οι στρατιώτες που φρουρούσαν τα ανατολικά σύνορα (τις «άκρες» της αυτοκρατορίας) λέγονταν Ακρίτες. Οι συνεχείς μάχες τους ενέπνευσαν τον λαό να γράψει ηρωικά τραγούδια, όπως το έπος του Διγενή Ακρίτα και του Αρμούρη. Αυτά τα τραγούδια είναι από τα πιο σημαντικά δείγματα της λαϊκής μας λογοτεχνίας.</li></ul></div>
+        </details>
+          <details class="unit-collapsible" id="unit-7">
+          <summary>
+            <span class="unit-summary-title">Κοινωνία και Οικονομία: Το Κράτος απέναντι στους &quot;Δυνατούς&quot;</span>
+            <span class="unit-summary-hint">Άνοιγμα</span>
+          </summary>
+          <div class="unit-collapsible-body"><h4>1. Οι Κοινωνικές Τάξεις στην Ύπαιθρο</h4><ul class='point-list'><li>Οι &quot;Δυνατοί&quot; (Πλούσιοι): Μια νέα τάξη αριστοκρατών που κατείχαν τεράστια κτήματα και υψηλά αξιώματα (πολιτικοί, στρατιωτικοί, κληρικοί). Ζούσαν μέσα στη χλιδή, αλλά σπάνια βελτίωναν τον τρόπο παραγωγής στα κτήματά τους.</li><li>Οι &quot;Πένητες&quot; (Φτωχοί): Ο απλός αγροτικός λαός. Κάποιοι ήταν ελεύθεροι μικροϊδιοκτήτες, άλλοι νοίκιαζαν γη, και άλλοι (πάροικοι) ήταν εξαρτημένοι από τους πλούσιους γαιοκτήμονες.</li><li>Το Πρόβλημα: Οι &quot;Δυνατοί&quot; άρχισαν να αγοράζουν ή να αρπάζουν παράνομα τα κτήματα των μικρών αγροτών, εκμεταλλευόμενοι τη φτώχεια τους.</li></ul><h4>2. Οι Νόμοι της Μακεδονικής Δυναστείας</h4><ul class='point-list'><li>Για να οργανώσουν το κράτος και να λύσουν τα κοινωνικά προβλήματα, οι αυτοκράτορες εξέδωσαν νέους νόμους:</li><li>Πρόχειρος Νόμος: Μια νέα, εύχρηστη νομική συλλογή.</li><li>Επαναγωγή: Καθόριζε τα καθήκοντα του Αυτοκράτορα και του Πατριάρχη.</li><li>Βασιλικά: Μεγάλη συλλογή 60 βιβλίων, βασισμένη στους παλιούς νόμους του Ιουστινιανού.</li><li>Επαρχικόν Βιβλίον: Κανόνες για τους επαγγελματίες και τις συντεχνίες της Κωνσταντινούπολης.</li><li>Νεαρές (Νέοι Νόμοι): Νόμοι που είχαν ως κύριο σκοπό να προστατέψουν τους φτωχούς αγρότες.</li></ul><h4>3. Ο Αγώνας του Κράτους κατά των &quot;Δυνατών&quot;</h4><ul class='point-list'><li>Γιατί το κράτος προστάτευε τους μικρούς αγρότες; Επειδή οι ελεύθεροι μικροκαλλιεργητές ήταν αυτοί που υπηρετούσαν στον στρατό και πλήρωναν τους περισσότερους φόρους. Αν εξαφανίζονταν, το Βυζάντιο θα έμενε χωρίς άμυνα και χωρίς χρήματα.</li><li>Τι όριζαν οι &quot;Νεαρές&quot; (922-1002):</li><li>Όταν πουλιόταν ένα χωράφι, οι συγγενείς και οι γείτονες είχαν προτεραιότητα να το αγοράσουν, για να μην περάσει στα χέρια των &quot;Δυνατών&quot;.</li><li>Όσα χωράφια είχαν αρπάξει οι Δυνατοί έπρεπε να τα επιστρέψουν στους φτωχούς χωρίς αποζημίωση.</li><li>Απαγορεύτηκε αυστηρά η πώληση στρατιωτικών κτημάτων.</li><li>Το σύστημα του &quot;Αλληλέγγυου&quot; (1002): Οι Δυνατοί υποχρεώθηκαν να πληρώνουν εκείνοι τους φόρους των φτωχών συγχωριανών τους που δεν είχαν χρήματα.</li></ul></div>
+        </details>
+          <details class="unit-collapsible" id="unit-8">
+          <summary>
+            <span class="unit-summary-title">Η Βυζαντινή Εποποιία: Επικοί αγώνες και επέκταση</span>
+            <span class="unit-summary-hint">Άνοιγμα</span>
+          </summary>
+          <div class="unit-collapsible-body"><h4>1. Οι μεγάλες νίκες εναντίον των Αράβων</h4><ul class='point-list'><li>Η αντεπίθεση: Στα χρόνια του αυτοκράτορα Ρωμανού Λακαπηνού, το Βυζάντιο σταμάτησε την άμυνα και πέρασε στην επίθεση.</li><li>Οι Στρατηγοί-Αυτοκράτορες: Τρεις σπουδαίοι ηγέτες (Νικηφόρος Φωκάς, Ιωάννης Τζιμισκής και Βασίλειος Β΄) οδήγησαν τον στρατό σε επικές νίκες.</li><li>Τα κέρδη: Το Βυζάντιο πήρε πίσω την Κρήτη (961), την Κύπρο (965) και μεγάλες περιοχές της Μέσης Ανατολής, με σκοπό να ελευθερώσει όλα τα παλιά ρωμαϊκά εδάφη.</li></ul><h4>2. Η σκληρή σύγκρουση με τους Βουλγάρους</h4><ul class='point-list'><li>Ο φιλόδοξος Συμεών: Οι σχέσεις χάλασαν όταν ο ηγέτης των Βουλγάρων, ο Συμεών, πολιόρκησε την Κωνσταντινούπολη θέλοντας να γίνει ο ίδιος αυτοκράτορας &quot;Βουλγάρων και Ρωμαίων&quot;. Μετά τον θάνατό του, έγινε προσωρινά ειρήνη.</li><li>Ο Τσάρος Σαμουήλ: Ο πόλεμος ξανάρχισε όταν ο Σαμουήλ έφτιαξε ένα νέο βουλγαρικό κράτος με κέντρο την Αχρίδα.</li><li>Ο θρίαμβος του Βασιλείου Β΄: Μετά από έναν πολύ μακρύ και δύσκολο πόλεμο, ο Βασίλειος Β΄ συνέτριψε τους Βουλγάρους στον Σπερχειό (997) και στο Κλειδί (1014). Το 1018 η Βουλγαρία υποτάχθηκε πλήρως και τα σύνορα του Βυζαντίου έφτασαν ξανά στον ποταμό Δούναβη.</li></ul><h4>3. Η Οικονομική Ανάπτυξη (Τα οφέλη των πολέμων)</h4><ul class='point-list'><li>Νέος πλούτος: Οι κατακτήσεις νέων εδαφών πρόσθεσαν στο κράτος εργατικά χέρια και πολλά νέα έσοδα.</li><li>Ειρήνη στην ύπαιθρο: Επειδή σταμάτησαν οι αραβικές επιδρομές, οι αγρότες μπορούσαν πια να καλλιεργούν τη γη τους χωρίς φόβο, αυξάνοντας την παραγωγή.</li><li>Ευμάρεια και περηφάνια: Τα κρατικά ταμεία γέμισαν με νομίσματα, το Βυζάντιο έγινε ξανά μια πανίσχυρη αυτοκρατορία που όλοι σέβονταν, και οι κάτοικοί του ένιωθαν μεγάλη περηφάνια και αυτοπεποίθηση.</li></ul></div>
+        </details>
+          <details class="unit-collapsible" id="unit-9">
+          <summary>
+            <span class="unit-summary-title">Η Κρίση, οι Κομνηνοί και το Σχίσμα (11ος - 12ος αιώνας)</span>
+            <span class="unit-summary-hint">Άνοιγμα</span>
+          </summary>
+          <div class="unit-collapsible-body"><h4>1. Η Μεγάλη Κρίση και οι Ήττες (1025-1081)</h4><ul class='point-list'><li>Λάθη στο εσωτερικό: Μετά τον θάνατο του Βασιλείου Β&#x27; (1025), το κράτος παραμέλησε τον στρατό και τον στόλο. Η υποχρεωτική στρατιωτική θητεία αντικαταστάθηκε από φόρο για να πληρώνονται ξένοι μισθοφόροι. Παράλληλα, οι νέοι βαρείς φόροι έφεραν εξεγέρσεις των αγροτών.</li><li>Στρατιωτικές καταστροφές (1071):</li><li>Ματζικέρτ: Οι Σελτζούκοι Τούρκοι συνέτριψαν τον απείθαρχο μισθοφορικό στρατό του Βυζαντίου στην Αρμενία.</li><li>Μπάρι: Οι Νορμανδοί κατέλαβαν την πόλη Μπάρι, διώχνοντας οριστικά τους Βυζαντινούς από την Ιταλία.</li></ul><h4>2. Η Δυναστεία των Κομνηνών (Αναδιοργάνωση και Πτώση)</h4><ul class='point-list'><li>Ο Θεσμός της «Πρόνοιας»: Ο Αλέξιος Α&#x27; Κομνηνός προσπάθησε να σώσει το κράτος στηριζόμενος στους ευγενείς. Τους έδινε αγροκτήματα και φορολογικά έσοδα («πρόνοιες») με αντάλλαγμα στρατιωτικές υπηρεσίες, αλλά αυτό βύθισε τους απλούς αγρότες στην αθλιότητα.</li><li>Αντεπίθεση: Οι πρώτοι Κομνηνοί κατάφεραν να διώξουν διάφορους εχθρούς και να πάρουν πίσω σημαντικές πόλεις της Μικράς Ασίας (Νίκαια, Σμύρνη, κ.ά.).</li><li>Μυριοκέφαλο (1176): Η προσπάθεια κατέρρευσε όταν ο Μανουήλ Κομνηνός ηττήθηκε βαριά από τους Σελτζούκους στο Μυριοκέφαλο. Η ήττα αυτή οδήγησε στον σταδιακό εξισλαμισμό των κατοίκων της Μικράς Ασίας.</li></ul><h4>3. Οι Βενετοί και το Σχίσμα των Εκκλησιών</h4><ul class='point-list'><li>Χρυσόβουλο του 1082: Για να νικήσει τους Νορμανδούς, ο Αλέξιος Α&#x27; ζήτησε τη βοήθεια του πανίσχυρου βενετικού στόλου. Ως αντάλλαγμα, επέτρεψε στους Βενετούς να εμπορεύονται ελεύθερα σε όλα τα βυζαντινά λιμάνια χωρίς να πληρώνουν φόρους. Έτσι, το Βυζάντιο έχασε τον έλεγχο του εμπορίου της Μεσογείου.</li><li>Το Σχίσμα (1054): Η Ανατολή και η Δύση είχαν μια παλιά αντιπαράθεση για το ποιος έχει την κυριαρχία στους Χριστιανούς. Η αλαζονεία στις διαπραγματεύσεις έφερε την οριστική ρήξη. Οι Εκκλησίες χωρίστηκαν για πάντα σε Ορθόδοξη και Ρωμαιοκαθολική, γεμίζοντας τους δύο κόσμους με μίσος.</li></ul></div>
+        </details>
+          <details class="unit-collapsible" id="unit-10">
+          <summary>
+            <span class="unit-summary-title">Οι Σταυροφορίες και η Πτώση της Κωνσταντινούπολης (11ος - 13ος αιώνας)</span>
+            <span class="unit-summary-hint">Άνοιγμα</span>
+          </summary>
+          <div class="unit-collapsible-body"><h4>1. Τι ήταν οι Σταυροφορίες και γιατί ξεκίνησαν;</h4><ul class='point-list'><li>Ορισμός: Ήταν μια στρατιωτική και θρησκευτική κίνηση που ξεκίνησε στη Δύση τον 11ο αιώνα από τους Πάπες.</li><li>Σκοπός: Η απελευθέρωση του Παναγίου Τάφου και των Αγίων Τόπων, τους οποίους είχαν κατακτήσει οι Σελτζούκοι Τούρκοι.</li><li>Αιτίες: Η κίνηση αυτή οργανώθηκε επειδή κυκλοφορούσαν φήμες για βασανιστήρια των χριστιανών προσκυνητών, λόγω των οικονομικών προβλημάτων της Δύσης, αλλά και επειδή ο αυτοκράτορας Αλέξιος Α&#x27; Κομνηνός είχε ζητήσει βοήθεια.</li></ul><h4>2. Οι Τρεις Πρώτες Σταυροφορίες</h4><ul class='point-list'><li>Η Πρώτη Σταυροφορία (1096-1099): Ξεκίνησε με κυρίως θρησκευτικό σκοπό. Αρχικά, πήγαν ανοργάνωτες μάζες απλού λαού, οι οποίες εξολοθρεύτηκαν από τους Τούρκους. Στη συνέχεια όμως πήγαν οι οργανωμένοι φεουδάρχες (ιππότες), οι οποίοι νίκησαν τους Τούρκους, έδωσαν πίσω στο Βυζάντιο εδάφη της δυτικής Μικράς Ασίας και ίδρυσαν δικά τους κρατίδια στη Συρία και την Παλαιστίνη.</li><li>Η Δεύτερη και η Τρίτη Σταυροφορία: Δεν είχαν καμία επιτυχία. Το πιο σημαντικό γεγονός για το Βυζάντιο ήταν η απώλεια της Κύπρου. Το νησί καταλήφθηκε από τον Άγγλο βασιλιά Ριχάρδο Λεοντόκαρδο (1192) και δόθηκε στους Φράγκους, οι οποίοι το κράτησαν για σχεδόν 400 χρόνια.</li></ul><h4>3. Η Τέταρτη Σταυροφορία (Η Μεγάλη Καταστροφή)</h4><ul class='point-list'><li>Αλλαγή κινήτρων: Με το πέρασμα του χρόνου, οι σταυροφόροι έχασαν το θρησκευτικό τους πάθος και άρχισαν να ενδιαφέρονται περισσότερο για τα πλούτη.</li><li>Η Εκτροπή: Το αποκορύφωμα αυτής της αλλαγής ήταν η τέταρτη σταυροφορία. Ενώ οι σταυροφόροι είχαν ξεκινήσει για να πολεμήσουν στην Αίγυπτο και τη Συρία, άλλαξαν πορεία.</li><li>Η Άλωση (1204): Αντί να ελευθερώσουν τους Αγίους Τόπους, οι σταυροφόροι επιτέθηκαν στο ίδιο το Βυζάντιο και κατέλαβαν την Κωνσταντινούπολη το 1204.</li></ul></div>
+        </details>
+          <details class="unit-collapsible" id="unit-11">
+          <summary>
+            <span class="unit-summary-title">Η Άλωση της Πόλης και η Κληρονομιά του Βυζαντίου</span>
+            <span class="unit-summary-hint">Άνοιγμα</span>
+          </summary>
+          <div class="unit-collapsible-body"><h4>1. Η Πολιορκία και η Πτώση (1453)</h4><ul class='point-list'><li>Η προετοιμασία: Ο σουλτάνος Μωάμεθ Β΄ ο Πορθητής προετοίμασε την πολιορκία χτίζοντας ένα φρούριο στον Βόσπορο, για να εμποδίσει τον ανεφοδιασμό της Πόλης από τη θάλασσα.</li><li>Άνιση μάχη: Η πολιορκία κράτησε 54 μέρες (6 Απριλίου - 29 Μαΐου 1453). Ο αυτοκράτορας Κωνσταντίνος ΙΑ΄ είχε ελάχιστους στρατιώτες, ενώ οι Οθωμανοί είχαν συντριπτική υπεροχή σε στρατό και όπλα.</li><li>Η Άλωση: Η τελική επίθεση έγινε τη νύχτα της 29ης Μαΐου. Οι γενίτσαροι πέρασαν τα τείχη και ο αυτοκράτορας έπεσε ηρωικά πολεμώντας. Η Πόλη λεηλατήθηκε για τρεις μέρες και έγινε η νέα πρωτεύουσα του Μωάμεθ.</li></ul><h4>2. Ποιες ήταν οι συνέπειες;</h4><ul class='point-list'><li>Για τους Έλληνες: Παρά τον μεγάλο θρήνο και τον τραυματισμό της περηφάνιας τους, γρήγορα άρχισε να γεννιέται η ελπίδα για την «Ανάσταση του Γένους».</li><li>Για τη Δύση: Πολλοί μορφωμένοι Βυζαντινοί (λόγιοι) έφυγαν για την Ευρώπη, μεταφέροντας εκεί το πνεύμα και τις γνώσεις του Βυζαντίου.</li><li>Οι Ανακαλύψεις: Επειδή οι Οθωμανοί έκλεισαν τους εμπορικούς δρόμους προς την Ανατολή, οι Ευρωπαίοι αναγκάστηκαν να ψάξουν νέους δρόμους, ξεκινώντας έτσι τις μεγάλες γεωγραφικές ανακαλύψεις.</li></ul><h4>3. Η Πολιτισμική Κληρονομιά του Βυζαντίου</h4><ul class='point-list'><li>Το Βυζάντιο πρόσφερε πάρα πολλά στον παγκόσμιο πολιτισμό:</li><li>Η «Τρίτη Ρώμη»: Οι Ρώσοι θεώρησαν ότι είναι οι μοναδικοί κληρονόμοι της βυζαντινής παράδοσης και ονόμασαν τη Μόσχα «Τρίτη Ρώμη».</li><li>Ασπίδα της Ευρώπης: Το Βυζάντιο είχε σώσει την Ευρώπη από τις αραβικές επιθέσεις παλαιότερα (7ος-8ος αι.).</li><li>Διάσωση της Αρχαιότητας: Διαφύλαξε και μετέδωσε στην Ευρώπη τα αρχαία ελληνικά κείμενα και τους ρωμαϊκούς νόμους.</li><li>Τέχνες και Επιστήμες: Ανέπτυξε μια σπουδαία τέχνη που επηρέασε τόσο την ιταλική Αναγέννηση όσο και την οθωμανική αρχιτεκτονική. Επίσης, εξέλιξε τις επιστήμες (αστρονομία, μαθηματικά) και τη θρησκευτική μουσική.</li><li>Η Ορθοδοξία: Βοήθησε τους βαλκανικούς λαούς να κρατήσουν ζωντανή την ταυτότητά τους στα δύσκολα χρόνια της Τουρκοκρατίας.</li></ul></div>
+        </details>
+        </div>
+      </div>
+    </section>
+    <section id="flashcards" class="section">
+      <div class="panel">
+        <h2 class="section-title">Κάρτες Μνήμης</h2>
+        <p class="section-intro">Πάτησε πάνω σε κάθε κάρτα για να δεις την απάντηση. </p>
+        <div class="flashcard-container">
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Νέα Ρώμη</div>
+                <div class="flashcard-back">Το νέο όνομα της Κωνσταντινούπολης, που σταδιακά απέκτησε χριστιανικό και αυτοκρατορικό χαρακτήρα.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Διάταγμα των Μεδιολάνων</div>
+                <div class="flashcard-back">Η συμφωνία του 313 που αναγνώρισε την ελευθερία της χριστιανικής λατρείας.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Α΄ Οικουμενική Σύνοδος</div>
+                <div class="flashcard-back">Η σύνοδος στη Νίκαια που συγκλήθηκε για την αντιμετώπιση των αιρέσεων και την ειρήνευση της Εκκλησίας.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Χριστόγραμμα</div>
+                <div class="flashcard-back">Το χριστιανικό σύμβολο που ο Κωνσταντίνος μετέφερε από το λάβαρο και στα νομίσματα.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Ιουστινιάνειος Κώδικας</div>
+                <div class="flashcard-back">Το τμήμα της κωδικοποίησης που συγκέντρωνε παλαιότερους αυτοκρατορικούς νόμους.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Πανδέκτης</div>
+                <div class="flashcard-back">Το μέρος της ιουστινιάνειας νομοθεσίας που περιλάμβανε γνώμες Ρωμαίων νομικών.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Νεαρές</div>
+                <div class="flashcard-back">Οι νέοι νόμοι του Ιουστινιανού, γραμμένοι κυρίως στα ελληνικά.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Στάση του Νίκα</div>
+                <div class="flashcard-back">Η μεγάλη εξέγερση των δήμων του Ιπποδρόμου που καταπνίγηκε αποφασιστικά.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Αγία Σοφία</div>
+                <div class="flashcard-back">Το λαμπρότερο οικοδόμημα του Ιουστινιανού, κορυφαίο δείγμα βασιλικής με τρούλο.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Θέματα</div>
+                <div class="flashcard-back">Διοικητικές περιφέρειες με δικό τους στρατό, βασικό στήριγμα της άμυνας του Βυζαντίου.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Στρατιωτόπιο</div>
+                <div class="flashcard-back">Το κτήμα που δινόταν στον στρατιώτη-αγρότη για συντήρηση και εξοπλισμό.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Στρατηγός</div>
+                <div class="flashcard-back">Ο διοικητής του θέματος που συγκέντρωνε πολιτική και στρατιωτική εξουσία.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Εξελληνισμός</div>
+                <div class="flashcard-back">Η επικράτηση της ελληνικής γλώσσας και των ελληνικών τίτλων στη διοίκηση και στον στρατό.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Εικονομαχία</div>
+                <div class="flashcard-back">Η μεγάλη σύγκρουση για τη χρήση και προσκύνηση των εικόνων στο Βυζάντιο.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Εικονόφιλοι</div>
+                <div class="flashcard-back">Όσοι υποστήριζαν την τιμητική προσκύνηση των εικόνων.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Ιωάννης Δαμασκηνός</div>
+                <div class="flashcard-back">Ο σπουδαίος θεολόγος που υπερασπίστηκε τις εικόνες απέναντι στους εικονομάχους.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Αναστήλωση των εικόνων</div>
+                <div class="flashcard-back">Η οριστική αποκατάσταση των εικόνων που σήμανε το τέλος της Εικονομαχίας.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Μαγναύρα</div>
+                <div class="flashcard-back">Η ανώτερη σχολή της εποχής του Μιχαήλ Γ΄, κέντρο γραμμάτων και επιστημών.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Λέων ο Μαθηματικός</div>
+                <div class="flashcard-back">Ο λόγιος διευθυντής της Μαγναύρας, γνωστός για τη μεγάλη του μόρφωση.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Ακρίτες</div>
+                <div class="flashcard-back">Οι φρουροί των ανατολικών συνόρων που ενέπνευσαν τα ακριτικά τραγούδια.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Δυνατοί</div>
+                <div class="flashcard-back">Οι ισχυροί γαιοκτήμονες που απειλούσαν τη μικρή αγροτική ιδιοκτησία.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Πένητες</div>
+                <div class="flashcard-back">Οι φτωχότεροι αγρότες της υπαίθρου, που συχνά πιέζονταν από τους Δυνατούς.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Αλληλέγγυον</div>
+                <div class="flashcard-back">Το μέτρο που υποχρέωνε τους Δυνατούς να πληρώνουν τους φόρους των φτωχών συγχωριανών τους.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Βασιλικά</div>
+                <div class="flashcard-back">Η μεγάλη νομική συλλογή της Μακεδονικής δυναστείας, βασισμένη στους νόμους του Ιουστινιανού.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Επαρχικόν Βιβλίον</div>
+                <div class="flashcard-back">Το κείμενο με κανόνες για τους επαγγελματίες και τις συντεχνίες της Κωνσταντινούπολης.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Χρυσόβουλο του Αλεξίου Α΄</div>
+                <div class="flashcard-back">Το έγγραφο που παραχώρησε στους Βενετούς εμπορικά προνόμια χωρίς δασμούς.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Πρόνοια</div>
+                <div class="flashcard-back">Η παραχώρηση γαιών ή φορολογικών εσόδων με αντάλλαγμα κυρίως στρατιωτικές υπηρεσίες.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Σχίσμα των Εκκλησιών</div>
+                <div class="flashcard-back">Η οριστική ρήξη ανάμεσα στην Ορθόδοξη Ανατολή και τη Ρωμαιοκαθολική Δύση.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Ματζικέρτ</div>
+                <div class="flashcard-back">Η βαριά ήττα από τους Σελτζούκους που αποδυνάμωσε καθοριστικά το Βυζάντιο στη Μικρά Ασία.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Σταυροφορίες</div>
+                <div class="flashcard-back">Οι στρατιωτικές εκστρατείες της Δύσης με θρησκευτικά αλλά και πολιτικά ή οικονομικά κίνητρα.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Δ΄ Σταυροφορία</div>
+                <div class="flashcard-back">Η σταυροφορία που εκτράπηκε και οδήγησε στην άλωση της Κωνσταντινούπολης από τους Σταυροφόρους.</div>
+            </div>
+        </div>
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Άλωση της Πόλης</div>
+                <div class="flashcard-back">Η πτώση της Κωνσταντινούπολης στους Οθωμανούς, που σήμανε το τέλος της Βυζαντινής Αυτοκρατορίας.</div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sources" class="section">
+      <div class="panel">
+        <h2 class="section-title">Βιβλιοθήκη Πηγών</h2>
+
+        <div class="source-layout">
+          <div class="source-sidebar">
+            <label for="sourceSelect">Επίλεξε πηγή</label>
+            <select id="sourceSelect" class="source-selector" onchange="updateSource()"></select>
+            <div class="source-count" id="sourceCount"></div>
+          </div>
+          <div class="source-main">
+            <h3 id="sourceTitle"></h3>
+            <div class="source-box" id="sourceText"></div>
+            <div class="source-author" id="sourceAuthor"></div>
+            <div class="source-tip" id="sourceTip"></div>
+          </div>
+        </div>
+      </div>
+    
+  </main>
+
+  <footer>
+    <span class="footer-strong">Δημιουργία: Παναγιώτης Δόμβρος, Εκπαιδευτικός Αγγλικής Γλώσσας &amp; Θεατρολόγος, Διευθυντής 1ου Γυμνασίου Πυλαίας</span>
+  </footer>
+
+  <script>
+    const sourcesData = [{"label": "Κωνσταντίνος: Η θρησκευτική του στάση", "title": "Θρησκευτική στάση του Κωνσταντίνου", "text": "«Ο Κωνσταντίνος Α' [...] έγινε Χριστιανός μόλις τον χρόνο που πέθανε. Κατά τη διάρκεια της ζωής του παρέμεινε Ανώτατος Αρχιερέας (ανώτατος αξιωματούχος της ρωμαϊκής θρησκείας) και χρησιμοποιούσε τις εκφράσεις Ημέρα του Ήλιου και Ανίκητος Ήλιος, που, την περίοδο αυτή, συνήθως εννοούσαν τον θεό των Περσών, τον Μίθρα, του οποίου η λατρεία είχε διαδοθεί σε όλη την αυτοκρατορία [...]. Είναι βέβαιο ότι ο Κωνσταντίνος υπήρξε υποστηρικτής της και ότι κληρονόμησε την αφοσίωσή του αυτή από την οικογένειά του. Πιθανόν ο Ανίκητος Ήλιος ήταν ο Απόλλων.»", "author": "Α. Α. Vasiliev, Ιστορία της Βυζαντινής Αυτοκρατορίας, 324-1453, Αθήνα 1954, 70.", "tip": "Χρησιμοποίησέ την για να δείξεις ότι η στήριξη του Κωνσταντίνου στον Χριστιανισμό δεν σήμαινε άμεση πλήρη αποκοπή από την παλιά ρωμαϊκή θρησκευτική παράδοση."}, {"label": "Ιουστινιανός: Η κωδικοποίηση του Δικαίου", "title": "Κωδικοποίηση του Δικαίου", "text": "«Ο Ιουστινιανός, επειδή βρήκε τους νόμους σκοτεινούς λόγω της ανεπίτρεπτης πληθώρας τους και σε εμφανή σύγχυση εξαιτίας των αντιφάσεών τους, τους απάλλαξε από την αταξία των απατηλών λέξεων. Παραμέρισε τις αποκλίσεις τους και τους έδωσε διαρκή ισχύ.»", "author": "Προκόπιος, Κτίσματα 11, έκδ. Ο. Veh, Μόναχο 1977, 18-19.", "tip": "Εξηγεί καθαρά γιατί χρειαζόταν η κωδικοποίηση: πολυνομία, ασάφεια και αντιφάσεις στους παλιούς νόμους."}, {"label": "Ηράκλειος: Γένεση των θεμάτων και επικράτηση της ελληνικής", "title": "Γένεση των θεμάτων και επικράτηση της ελληνικής", "text": "«Όταν ήταν αυτοκράτορας ο Ηράκλειος [610-641] που καταγόταν από τη Λιβύη, η επικράτεια του Ρωμαϊκού Κράτους περιορίστηκε και ακρωτηριάστηκε τόσο στην Ανατολή όσο και στη Δύση. Τότε οι διάδοχοί του, που δεν ήξεραν πού και πώς να ασκήσουν την εξουσία τους, κατέτμησαν σε μικρά τμήματα τη διοίκησή τους και τα μεγάλα στρατιωτικά σώματα και εγκατέλειψαν την προγονική τους λατινική, υιοθετώντας την ελληνική γλώσσα [...]. Γιατί (παλιότερα) ονόμαζαν τους χιλίαρχους λογγίνους και τους εκατόνταρχους κεντουρίωνες και τους τωρινούς στρατηγούς κόμητες. Αλλά και η ονομασία θέμα είναι ελληνική και όχι ρωμαϊκή και προέρχεται από τη θέση.»", "author": "Κωνσταντίνος Πορφυρογέννητος, Περί θεμάτων, έκδ. Α. Pertusi, Πόλη του Βατικανού 1952, 60.", "tip": "Αποδεικνύει τον εξελληνισμό του κράτους και τη σύνδεση των μεταρρυθμίσεων με τη συρρίκνωση της αυτοκρατορίας."}, {"label": "Στρατιώτης-αγρότης: Υποχρεώσεις και δυσκολίες", "title": "Οι υποχρεώσεις του στρατιώτη-αγρότη", "text": "«Ένα επικουρικό σώμα του αυτοκρατορικού στρατού ήλθε να καταλάβει το στρατόπεδο που ήταν εκεί (κοντά στην πόλη Άμνια της μικρασιατικής Παφλαγονίας), για να ετοιμάσει εκστρατεία κατά των Αράβων. Ο χιλίαρχος, ο εκατόνταρχος και ο πεντηκόνταρχος προχώρησαν σε φροντισμένη επιθεώρηση, απαιτώντας αδιάκοπα από το πλήθος των στρατιωτών να παρουσιάζονται με τα άλογα και τις πολεμικές αμαξές τους. Ενώ πλησίαζε η επιθεώρηση, το άλογο του στρατιώτη Μουσούλιου, που ήταν πάμφτωχος, καταλήφθηκε αίφνης από κολικούς πόνους και σπασμούς, έπεσε κάτω και ψόφησε. Ο στρατιώτης δεν είχε χρήματα να αγοράσει άλλο άλογο και ήλθε σε πολύ δύσκολη θέση, ενώ ο εκατόνταρχος τον απειλούσε οργισμένος.»", "author": "Βίος Αγίου Φιλαρέτου, έκδ. Μ.Η. Fourmy - M. Leroy, Byzantion 9 (1934) 125-127.", "tip": "Δείχνει ότι ο στρατιώτης-αγρότης έπρεπε να στηρίζει μόνος του τον εξοπλισμό του· άρα το στρατιωτόπιο ήταν κρίσιμο για την άμυνα του κράτους."}, {"label": "Εικονομαχία: Επιχειρήματα των εικονομάχων", "title": "Επιχειρήματα των εικονομάχων", "text": "«Οι εικόνες αναπληρώνουν τα είδωλα και άρα αυτοί που τις προσκυνούν είναι ειδωλολάτρες [...]. Όμως δεν πρέπει να προσκυνούμε κατασκευάσματα των ανθρώπινων χεριών και κάθε είδους ομοίωμα [...]. Πληροφόρησέ με ποιος μας κληροδότησε αυτή την παράδοση, δηλαδή να σεβόμαστε και να προσκυνούμε κατασκευάσματα χεριών, ενώ ο Θεός απαγορεύει την προσκύνηση, και εγώ θα συμφωνήσω ότι αυτό είναι νόμος του Θεού.»", "author": "Από επιστολή του Λέοντος Γ΄ στον πάπα Γρηγόριο Β', Travaux et mémoires 3 (1968) 279.", "tip": "Χρησιμοποίησέ την για να παρουσιάσεις τη βασική θέση των εικονομάχων: θεωρούσαν την προσκύνηση εικόνων μορφή ειδωλολατρίας."}, {"label": "Εικονομαχία: Επιχειρήματα των εικονολατρών", "title": "Επιχειρήματα των εικονολατρών", "text": "«Εφόσον προσκυνώ και σέβομαι τον σταυρό και τη λόγχη, τον κάλαμο και τον σπόγγο, με τα οποία οι θεοκτόνοι Ιουδαίοι προσέβαλαν και σκότωσαν τον Κύριό μου, γιατί όλα αυτά στάθηκαν όργανα του έργου της σωτηρίας των ανθρώπων, πώς να μην προσκυνήσω και τις εικόνες που κατασκευάζουν οι πιστοί με αγαθή προαίρεση και με σκοπό τη δοξολογία και την ανάμνηση των παθημάτων του Χριστού; Και εφόσον προσκυνώ την εικόνα του σταυρού που κατασκευάζεται από οποιοδήποτε υλικό, πώς να μην προσκυνήσω την εικόνα του Χριστού που κατέστησε σωτήριο τον σταυρό; Ότι δεν προσκυνώ την ύλη είναι φανερό, διότι, αν καταστραφεί το εκτύπωμα ενός σταυρού που είναι κατασκευασμένος από ξύλο, παραδίδω το ξύλο στη φωτιά. Το ίδιο συμβαίνει και με το ξύλο των εικονισμάτων, όταν αυτά καταστραφούν.»", "author": "Ιωάννης Δαμασκηνός, Περί εικόνων, Λόγος δεύτερος, κεφ. 19, Migne, Patrologia Graeca, τ. 94, στήλη 1305.", "tip": "Η πηγή ξεχωρίζει καθαρά την τιμή προς το εικονιζόμενο πρόσωπο από τη λατρεία της ύλης."}, {"label": "Εικονομαχία: Απόψεις του Λέοντος Ε΄", "title": "Απόψεις Λέοντος Ε΄ για την εικονολατρία", "text": "«Γιατί οι Χριστιανοί παθαίνουν ήττες από τους εθνικούς, Επειδή λατρεύονται οι εικόνες [...]! Γι' αυτό σκοπεύω να τις καταστρέψω. [...] Οι αυτοκράτορες που δέχτηκαν και λάτρεψαν τις εικόνες πέθαναν στην εξορία ή στη μάχη. Αυτοί όμως που δεν τις λάτρεψαν πέθαναν στο κρεβάτι τους και τάφηκαν με τιμές στους αυτοκρατορικούς τάφους κοντά στο ναό των Αγ. Αποστόλων. Εγώ επιθυμώ να μιμηθώ τη δεύτερη κατηγορία και να τις καταστρέψω, για να μακροημερεύσω και εγώ και ο γιος μου και η δυναστεία μας να βασιλεύσει ως την 4η και 5η γενιά.»", "author": "Scriptor incertus de Leone Bardae filio, έκδ. I. Bekker, Bonn 1842, 349.", "tip": "Μπορεί να στηρίξει την άποψη ότι οι εικονομάχοι συνέδεαν τις στρατιωτικές αποτυχίες με τη θεϊκή τιμωρία."}, {"label": "Ύπαιθρος και Δυνατοί: Νεαρά του Βασιλείου Β΄ (996)", "title": "Νεαρά του Βασιλείου Β΄ (996)", "text": "«Οι πρόσθετες περιουσίες που απέκτησαν οι δυνατοί στις κοινότητες των χωρίων μέχρι την έκδοση της πρώτης Νεαράς του προπάππου μας και αυτοκράτορα Ρωμανού του Πρεσβυτέρου και πιστοποιούνται με έγγραφα δικαιώματα και αξιόπιστες μαρτυρίες, να διατηρηθούν και να παραμείνουν στην κατοχή τους, σύμφωνα και με τους παλαιούς νόμους [...]. Από τότε που εκδόθηκε αυτός ο νόμος του Ρωμανού του Πρεσβυτέρου (922) ως σήμερα, 1η Ιανουαρίου της 9ης ινδικτιώνος του έτους 6704 (996), αλλά και στο εξής, διακηρύσσουμε ότι η τεσσαρακονταετία δεν επιτρέπεται καθόλου να ενεργοποιηθεί κατά των φτωχών, στις περιπτώσεις που έχουν δοσοληψίες με τους δυνατούς, αλλά οι περιουσίες πρέπει να αποδίδονται στους φτωχούς και οι δυνατοί να μη δικαιούνται να πάρουν πίσω το αντίτιμο της αγοράς αυτών των τόπων και τα έξοδα των βελτιώσεων [που έκαναν], γιατί και την ανωτέρω νομοθεσία αποδεδειγμένα έχουν παραβιάσει και γι' αυτό αξίζουν περισσότερο την τιμωρία [...]. Και δεν θεσπίζουμε τα μέτρα αυτά μόνο για το μέλλον, αλλά τους προσδίδουμε και αναδρομική ισχύ. Επομένως ισχύουν για το παρελθόν ως το έτος που μνημονεύουμε πιο πάνω (-922) [...].»", "author": "N. Svoronos, Les novelles des empereurs Macédoniens..., έκδ. Π. Γουναρίδης, Ε.Ι.Ε./Κ.Β.Ε-ΜΙΕΤ, Αθήνα 1994, 204.", "tip": "Τονίζει ότι το κράτος προσπάθησε να περιορίσει την αυθαίρετη επέκταση των Δυνατών εις βάρος των φτωχών."}, {"label": "Υπαιθρος και Δυνατοί: Νεαρά του 934", "title": "Οφέλη από την ύπαρξη των μικροκαλλιεργητών", "text": "«Η εξουσία τέτοιων ισχυρών προσώπων αύξησε υπερβολικά τη μεγάλη ταλαιπωρία των φτωχών, διότι [οι δυνατοί] με το πλήθος των οικόσιτων υπηρετών τους, των μίσθαρνων οργάνων τους και των άλλων παρατρεχάμενων και ακολούθων τους προκάλεσαν βίαιες επιθέσεις, διώξεις, αγγαρείες, άλλες θλίψεις και στενοχώριες και προξένησαν μεγάλη καταστροφή στο κοινό συμφέρον [...]. Αλλά η ύπαρξη πολλών μικροϊδιοκτητών προσφέρει μεγάλα οφέλη στο κράτος, καθώς αυτοί πληρώνουν φόρους και παρέχουν στρατιωτικές υπηρεσίες στο κράτος. Τα οφέλη αυτά θα εκλείψουν, αν μειωθεί ο αριθμός των μικροκτηματιών. Όσοι λοιπόν είναι επιφορτισμένοι με τη δημόσια ασφάλεια πρέπει να απαλλαγούν από τους ταραξίες, να απομακρύνουν τα ενοχλητικά στοιχεία και να διασφαλίσουν τη δημόσια σωτηρία.»", "author": "N. Svoronos, Les novelles des empereurs Macédoniens..., έκδ. Π. Γουναρίδης, Ε.Ι.Ε./Κ.Β.Ε-ΜΙΕΤ, Αθήνα 1994, 85.", "tip": "Είναι ιδανική για να εξηγήσεις γιατί η προστασία των μικροκαλλιεργητών δεν ήταν μόνο κοινωνικό, αλλά και στρατιωτικό και φορολογικό ζήτημα."}, {"label": "Κρίση του 11ου αιώνα: Οι ξένοι στη διοίκηση", "title": "Οι ξένοι και η διοίκηση του κράτους", "text": "«Στους ξένους, αν δεν κρατάνε από βασιλική γενιά στη χώρα τους, να μην απονέμεις μεγάλους τίτλους ούτε να τους εμπιστεύεσαι μεγάλες εξουσίες. Κάνοντας κάτι τέτοιο, σίγουρα και τον εαυτό σου θα μειώσεις αλλά και τους ρωμαίους άρχοντές σου. Διότι, όταν θα τιμήσεις έναν ξένο που έχει έλθει από ταπεινή γενιά με το αξίωμα του πριμικηρίου ή του στρατηγού, ποια αντάξια στρατηγία θα δώσεις στον Ρωμαίο; Σίγουρα θα τον κάνεις εχθρό. Αλλά και στη χώρα του, αν ακούσουν ότι αυτός ανέβηκε σε τέτοιους τίτλους, όλοι θα γελάσουν και θα πουν: “Εμείς εδώ δεν τον είχαμε άξιο για τίποτα, κι όταν πήγε στη Ρωμανία κατάφερε να πάρει τέτοιο αξίωμα. Φαίνεται ότι στη Ρωμανία δεν υπάρχει κανένας ικανός άνθρωπος, γι' αυτό ανέβηκε τόσο ψηλά ο δικός μας [....]”. Πολύ συμφέρει τη Ρωμανία, κύριέ μου, να μην τιμά τους ξένους με μεγάλα αξιώματα [...].»", "author": "Κεκαυμένος, Στρατηγικόν, μετ. Δ. Τσουγκαράκης, εκδ. Κανάκη, Αθήνα 1996, 250.", "tip": "Η πηγή δείχνει την εσωτερική δυσαρέσκεια που προκαλούσε η ανάδειξη ξένων σε υψηλές θέσεις."}, {"label": "Κομνηνοί: Πρόνοιες, στρατός και χωρικοί", "title": "Πρόνοιες, στρατός και χωρικοί", "text": "«Ο Μανουήλ [...] καταχράστηκε το θεσμό [της πρόνοιας] που είχε επινοηθεί από προηγούμενους αυτοκράτορες [...]. Ανεπαίσθητα, έκανε τη στρατιωτική τάξη χαλαρή, κατεύθυνε πληθώρα χρημάτων προς οκνηρές κοιλιές και δημιούργησε πολύ κακή κατάσταση στις ρωμαϊκές επαρχίες. Οι γενναίοι στρατιώτες είχαν αποβάλει το φιλότιμο μπροστά στους κινδύνους [...]. Οι κάτοικοι των επαρχιών υπέστησαν τα πάνδεινα από την απληστία των στρατιωτών (των προνοιάριων): δεν τους άρπαζαν μόνο τα χρήματα ως τον τελευταίο οβολό, αλλά τους αφαιρούσαν και τον τελευταίο τους χιτώνα [...]. Όποιος ήθελε μπορούσε να στρατολογηθεί [...]. Όσοι έφεραν μαζί τους ένα περσικό άλογο ή κατέθεσαν λίγα χρυσά νομίσματα, εγγράφηκαν αβασάνιστα στις στρατιωτικές ίλες και εφοδιάστηκαν αμέσως με αυτοκρατορική επιστολή που τους παραχωρούσε γόνιμα χωράφια και ρωμαίους φορολογούμενους που υπηρετούσαν ως δούλοι και κάποτε κατέβαλαν φόρους σε ημιβάρβαρα ανδρείκελα [...]. Η τύχη των επαρχιών ήταν ανάλογη με την απειθαρχία του στρατού: άλλες λεηλατήθηκαν μπροστά στα μάτια μας από τους εχθρούς και ενσωματώθηκαν στο κράτος τους, άλλες καταστράφηκαν και ερημώθηκαν σαν εχθρική χώρα από τους στρατιώτες μας.»", "author": "Νικήτας Χωνιάτης, Χρονική Διήγησις, VII, 4, έκδ. Ι. Α. van Dieten, Βερολίνο 1975, 208-209.", "tip": "Η πηγή αναδεικνύει τις κοινωνικές συνέπειες της κατάχρησης της πρόνοιας και τη φθορά του στρατού."}];
+
+    function showSection(sectionId, btn) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(button => button.classList.remove('active'));
+      const target = document.getElementById(sectionId);
+      if (target) target.classList.add('active');
+      if (btn) btn.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function populateSources() {
+      const select = document.getElementById('sourceSelect');
+      select.innerHTML = '';
+      sourcesData.forEach((item, index) => {
+        const option = document.createElement('option');
+        option.value = index;
+        option.textContent = item.label;
+        select.appendChild(option);
+      });
+
+      updateSource();
+    }
+
+    function updateSource() {
+      const index = parseInt(document.getElementById('sourceSelect').value || '0', 10);
+      const data = sourcesData[index];
+      if (!data) return;
+      document.getElementById('sourceTitle').textContent = data.title;
+      document.getElementById('sourceText').textContent = data.text;
+      document.getElementById('sourceAuthor').textContent = data.author;
+      document.getElementById('sourceTip').innerHTML = `<strong>Πώς να την αξιοποιήσεις:</strong> ${data.tip}`;
+    }
+
+    function setAllDetails(isOpen) {
+      document.querySelectorAll('.fulltext-item').forEach(item => item.open = isOpen);
+    }
+
+    document.querySelectorAll('details').forEach(item => item.open = false);
+    populateSources();
+  </script>
+</body>
+</html>
