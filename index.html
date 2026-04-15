@@ -152,6 +152,27 @@
       box-shadow: 0 10px 18px rgba(178, 58, 72, 0.18);
     }
 
+    nav a.nav-download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: white;
+      color: var(--primary);
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      font-size: 0.96rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--line);
+      transition: all 0.25s ease;
+    }
+
+    nav a.nav-download-btn:hover {
+      transform: translateY(-1px);
+      border-color: var(--primary-2);
+    }
+
     .container {
       max-width: 1200px;
       margin: 1.3rem auto 2rem;
@@ -235,6 +256,20 @@
       font-weight: 600;
       font-size: 0.92rem;
       border: 1px solid #d7e6f5;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .pill:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.4);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    }
+
+    .header-pill-row .pill {
+      background: rgba(255,255,255,0.14);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.22);
     }
 
     .overview-grid {
@@ -702,6 +737,9 @@
         </div>
       </div>
       <h2>Μέρος Α': Από την ίδρυση ως την άλωση της Κωνσταντινούπολης</h2>
+      <div class="pill-row header-pill-row">
+        <a class="pill" href="index-b.html">Μέρος Β'</a>
+      </div>
       <p class="header-subtitle">Μία επανάληψη βασικών ενοτήτων που <strong>συνήθως</strong> αποτελούν ύλη για τις εξετάσεις της Ιστορίας Β' Γυμνασίου. Να χρησιμοποιηθεί <strong>ΜΟΝΟ</strong> μετά από υπόδειξη των εκπαιδευτικών που σας διδάσκουν το μάθημα. Καλή δύναμη με το διάβασμά σας!</p>
       <img class="header-logo" src="logo-GR.png" onerror="this.onerror=null;this.src='logo_GR.png';" alt="Λογότυπο">
     </div>
@@ -713,6 +751,7 @@
     <button class="tab-btn" data-section="units" onclick="showSection('units', this)">Ενότητες</button>
     <button class="tab-btn" data-section="flashcards" onclick="showSection('flashcards', this)">Κάρτες Μνήμης</button>
     <button class="tab-btn" data-section="sources" onclick="showSection('sources', this)">Βιβλιοθήκη Πηγών</button>
+    <a class="nav-download-btn" href="https://drive.google.com/uc?export=download&id=1LJ66h1ti3L0RPDw1OF-CxsJxgC1srw2T" target="_blank" rel="noopener noreferrer">Λήψη Υλικού</a>
   </nav>
 
   <main class="container">

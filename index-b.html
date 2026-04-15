@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Βυζαντινή Ιστορία</title>
+  <meta property="og:title" content="Βυζαντινή Ιστορία - Χωρίς Άγχος για τις Εξετάσεις">
+  <meta property="og:description" content="Επανάληψη βασικών ενοτήτων για την Ιστορία Β΄ Γυμνασίου.">
+  <meta property="og:image" content="https://pdomvros-education.github.io/examrevision-history-b/image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pdomvros-education.github.io/examrevision-history-b/">
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --ink: #213547;
+      --muted: #5d6d7e;
+      --primary: #1f4e79;
+      --primary-2: #2d6ca2;
+      --accent: #b23a48;
+      --accent-soft: #f8e8ea;
+      --line: #d9e2ec;
+      --shadow: 0 12px 30px rgba(31, 78, 121, 0.08);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(180deg, #eef3f8 0%, #f8fafc 100%);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    header {
+      position: relative;
+      background: linear-gradient(135deg, #17324d 0%, #245984 55%, #2d6ca2 100%);
+      color: white;
+      padding: 2.2rem 1.5rem 1.9rem;
+      overflow: hidden;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-right: 170px;
+    }
+
+    .header-badge {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.18);
+      font-size: 0.92rem;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.9rem;
+    }
+
+    header h1 {
+      margin: 0 0 0.3rem;
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.1;
+    }
+
+    .title-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .title-img {
+      width: clamp(72px, 10vw, 120px);
+      height: clamp(72px, 10vw, 120px);
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid rgba(255,255,255,0.22);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+      background: rgba(255,255,255,0.12);
+      flex-shrink: 0;
+    }
+
+    .header-text {
+      min-width: 0;
+    }
+
+    .header-text h1 {
+      margin: 0;
+    }
+
+    .header-subtitle {
+      margin: 0;
+      max-width: 820px;
+      color: rgba(255,255,255,0.92);
+      font-size: 1.05rem;
+    }
+
+    .header-logo {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      background: #ffffff;
+      border: none;
+      border-radius: 50%;
+      padding: 4px;
+      backdrop-filter: none;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      padding: 0.9rem 1rem;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 8px 24px rgba(26, 54, 93, 0.06);
+    }
+
+    nav button {
+      border: none;
+      background: white;
+      color: var(--primary);
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      font-size: 0.96rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--line);
+      transition: all 0.25s ease;
+    }
+
+    nav button:hover {
+      transform: translateY(-1px);
+      border-color: var(--primary-2);
+    }
+
+    nav button.active {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+      box-shadow: 0 10px 18px rgba(178, 58, 72, 0.18);
+    }
+
+    nav a.nav-download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: white;
+      color: var(--primary);
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      font-size: 0.96rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--line);
+      transition: all 0.25s ease;
+    }
+
+    nav a.nav-download-btn:hover {
+      transform: translateY(-1px);
+      border-color: var(--primary-2);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 1.3rem auto 2rem;
+      padding: 0 1rem;
+    }
+
+    .section {
+      display: none;
+      animation: fadeIn 0.22s ease;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid rgba(217, 226, 236, 0.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      margin: 0 0 0.35rem;
+      color: var(--primary);
+      font-size: clamp(1.6rem, 2.1vw, 2.1rem);
+    }
+
+    .section-intro {
+      margin: 0 0 1.2rem;
+      color: var(--muted);
+      max-width: 900px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+    }
+
+    .hero-main {
+      grid-column: span 8;
+    }
+
+    .hero-side {
+      grid-column: span 4;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .note-box {
+      background: linear-gradient(180deg, #f8fbff 0%, #eff6fc 100%);
+      border: 1px solid #d6e4f2;
+      border-left: 6px solid var(--primary-2);
+      border-radius: 16px;
+      padding: 1rem 1rem 1rem 1.1rem;
+    }
+
+    .note-box h3 {
+      margin: 0 0 0.45rem;
+      color: var(--primary);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.9rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      border-radius: 999px;
+      padding: 0.4rem 0.8rem;
+      background: #eef5fb;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.92rem;
+      border: 1px solid #d7e6f5;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .pill:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.4);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    }
+
+    .header-pill-row .pill {
+      background: rgba(255,255,255,0.14);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.22);
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .overview-card {
+      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1rem;
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+      min-height: 145px;
+    }
+
+    .overview-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      flex: 0 0 44px;
+    }
+
+    .overview-card h4 {
+      margin: 0 0 0.35rem;
+      color: var(--primary);
+      font-size: 1.02rem;
+      line-height: 1.3;
+    }
+
+    .overview-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .timeline-item {
+      background: white;
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--accent);
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    }
+
+    .timeline-date {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-text {
+      color: var(--ink);
+    }
+
+    .units-topbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 0 0 1rem;
+    }
+
+    .unit-chip {
+      text-decoration: none;
+      color: var(--primary);
+      background: #eef5fb;
+      border: 1px solid #d7e6f5;
+      border-radius: 999px;
+      padding: 0.45rem 0.85rem;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .units-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .unit-collapsible {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 12px 24px rgba(19, 55, 90, 0.05);
+      overflow: hidden;
+    }
+
+    .unit-collapsible summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1.05rem 1.15rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      background: linear-gradient(180deg, #ffffff 0%, #f9fbfd 100%);
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 1.08rem;
+    }
+
+    .unit-collapsible summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .unit-summary-title {
+      line-height: 1.35;
+    }
+
+    .unit-summary-hint {
+      flex: 0 0 auto;
+      border-radius: 999px;
+      padding: 0.32rem 0.72rem;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .unit-collapsible[open] .unit-summary-hint {
+      background: #eef5fb;
+      color: var(--primary);
+    }
+
+    .unit-collapsible-body {
+      padding: 0 1.15rem 1.15rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .unit-collapsible-body h4 {
+      margin: 1rem 0 0.4rem;
+      color: var(--accent);
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    .point-list {
+      margin: 0;
+      padding-left: 1.15rem;
+    }
+
+    .point-list li {
+      margin: 0 0 0.45rem;
+      color: var(--ink);
+    }
+
+    .flashcard-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .flashcard {
+      width: 100%;
+      min-height: 170px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .flashcard-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 170px;
+      transition: transform 0.65s;
+      transform-style: preserve-3d;
+    }
+
+    .flashcard.flipped .flashcard-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flashcard-front, .flashcard-back {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem;
+      box-shadow: 0 16px 26px rgba(0,0,0,0.08);
+    }
+
+    .flashcard-front {
+      background: linear-gradient(135deg, #2a5d87 0%, #3e7bb1 100%);
+      color: white;
+      font-size: 1.16rem;
+      font-weight: 800;
+    }
+
+    .flashcard-back {
+      transform: rotateY(180deg);
+      background: linear-gradient(135deg, #b23a48 0%, #d06c77 100%);
+      color: white;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .source-layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 1rem;
+    }
+
+    .source-sidebar {
+      background: #fbfdff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1rem;
+    }
+
+    .source-sidebar label {
+      display: block;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .source-selector {
+      width: 100%;
+      padding: 0.8rem 0.9rem;
+      border-radius: 14px;
+      border: 1px solid #c9d8e7;
+      font-size: 0.97rem;
+      color: var(--ink);
+      background: white;
+    }
+
+    .source-count {
+      margin-top: 0.85rem;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .source-main {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1.2rem;
+    }
+
+    .source-main h3 {
+      margin: 0 0 0.85rem;
+      color: var(--primary);
+      font-size: 1.3rem;
+    }
+
+    .source-box {
+      background: #f3f8fc;
+      border-left: 5px solid var(--primary-2);
+      border-radius: 0 16px 16px 0;
+      padding: 1rem 1.1rem;
+      font-style: italic;
+      line-height: 1.75;
+      color: #22384c;
+      white-space: pre-wrap;
+    }
+
+    .source-author {
+      margin-top: 0.8rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .source-tip {
+      margin-top: 1rem;
+      background: #fff7df;
+      border-left: 5px solid #f1c40f;
+      border-radius: 0 16px 16px 0;
+      padding: 0.95rem 1rem;
+      color: #5f4c06;
+    }
+
+    .fulltext-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .small-btn {
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--primary);
+      border-radius: 999px;
+      padding: 0.55rem 0.9rem;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .fulltext-item {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      margin-bottom: 0.9rem;
+      overflow: hidden;
+      box-shadow: 0 10px 22px rgba(15, 35, 55, 0.05);
+    }
+
+    .fulltext-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1rem 1.1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+      background: linear-gradient(180deg, #ffffff 0%, #f9fbfd 100%);
+      color: var(--ink);
+      font-size: 1rem;
+    }
+
+    .fulltext-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .fulltext-item summary span {
+      color: var(--accent);
+      font-weight: 800;
+      background: var(--accent-soft);
+      border-radius: 999px;
+      padding: 0.28rem 0.65rem;
+      font-size: 0.86rem;
+    }
+
+    .fulltext-body {
+      padding: 0 1.1rem 1.1rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .fulltext-body h3 {
+      color: var(--primary);
+      margin-top: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .fulltext-body h4 {
+      color: var(--accent);
+      margin: 1rem 0 0.45rem;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 0.9rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 420px;
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid #dfe7ef;
+      padding: 0.75rem 0.85rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #edf4fb;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    footer {
+      max-width: 1200px;
+      margin: 2rem auto 3rem;
+      padding: 1rem 1.2rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.98rem;
+    }
+
+    .footer-strong {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 960px) {
+      .hero-main, .hero-side {
+        grid-column: span 12;
+      }
+      .source-layout {
+        grid-template-columns: 1fr;
+      }
+      .header-inner {
+        padding-right: 0;
+      }
+      .header-logo {
+        position: static;
+        display: block;
+        width: 92px;
+        height: 92px;
+        margin: 0.8rem 0 0 auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding: 1.6rem 1rem 1.4rem;
+      }
+      .title-row {
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+      .title-img {
+        width: 64px;
+        height: 64px;
+      }
+      nav {
+        justify-content: flex-start;
+      }
+      nav button {
+        font-size: 0.92rem;
+      }
+      .container {
+        padding: 0 0.7rem;
+      }
+      .panel {
+        padding: 1rem;
+      }
+      .flashcard-front, .flashcard-back {
+        padding: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="title-row">
+        <img src="image.png" alt="Εικόνα ενότητας" class="title-img">
+        <div class="header-text">
+          <h1>Βυζαντινή Ιστορία</h1>
+          <h1>Χωρίς Άγχος για τις Εξετάσεις</h1>
+        </div>
+      </div>
+      <h2>Μέρος Β': Καθημερινή ζωή στο Βυζάντιο και η Μεσαιωνική και Αναγεννησιακή Ευρώπη</h2>
+      <div class="pill-row header-pill-row">
+        <a class="pill" href="index.html">Μέρος Α'</a>
+      </div>
+      <p class="header-subtitle">Μία επανάληψη βασικών ενοτήτων που <strong>συνήθως</strong> αποτελούν ύλη για τις εξετάσεις της Ιστορίας Β' Γυμνασίου. Να χρησιμοποιηθεί <strong>ΜΟΝΟ</strong> μετά από υπόδειξη των εκπαιδευτικών που σας διδάσκουν το μάθημα. Καλή δύναμη με το διάβασμά σας!</p>
+      <img class="header-logo" src="logo-GR.png" onerror="this.onerror=null;this.src='logo_GR.png';" alt="Λογότυπο">
+    </div>
+  </header>
+
+  <nav>
+    <button class="tab-btn active" data-section="overview" onclick="showSection('overview', this)">Επισκόπηση</button>
+    <button class="tab-btn" data-section="timeline" onclick="showSection('timeline', this)">Χρονογραμμή</button>
+    <button class="tab-btn" data-section="units" onclick="showSection('units', this)">Ενότητες</button>
+    <button class="tab-btn" data-section="flashcards" onclick="showSection('flashcards', this)">Κάρτες Μνήμης</button>
+    <button class="tab-btn" data-section="sources" onclick="showSection('sources', this)">Βιβλιοθήκη Πηγών</button>
+    <a class="nav-download-btn" href="https://drive.google.com/uc?export=download&id=1Ls67gsfMSgo2LEIfVv0FdLYCciykQTqg" target="_blank" rel="noopener noreferrer">Λήψη Υλικού</a>
+  </nav>
+
+  <main class="container">
+    <section id="overview" class="section active">
+      <div class="overview-grid">
+          <div class='overview-card'><div><h4>Η Καθημερινή Ζωή στο Βυζάντιο</h4><p>1. Οικογένεια και Γυναίκα</p></div></div><div class='overview-card'><div><h4>Ο Καρλομάγνος και η εποχή του</h4><p>1. Μια νέα αυτοκρατορία</p></div></div><div class='overview-card'><div><h4>Η Φεουδαρχία στη Δυτική Ευρώπη (8ος - 13ος αιώνας)</h4><p>1. Πώς γεννήθηκε η Φεουδαρχία (Αιτίες)</p></div></div><div class='overview-card'><div><h4>Οι Ανακαλύψεις (15ος - 16ος αιώνας)</h4><p>1. Γιατί ξεκίνησαν οι εξερευνήσεις; (Αιτίες)</p></div></div><div class='overview-card'><div><h4>Αναγέννηση και Ανθρωπισμός (15ος - 16ος αιώνας)</h4><p>1. Τι ήταν η Αναγέννηση;</p></div></div>
+        </div>
+    </section><section id="timeline" class="section">
+      <div class="panel">
+        <h2 class="section-title">Πλήρης Χρονογραμμή</h2>
+        <p class="section-intro">Συγκεντρωμένα όλα τα χρονολογημένα γεγονότα και οι βασικές περίοδοι που αναφέρονται στα κείμενα της σελίδας, από την καθημερινή ζωή στο Βυζάντιο έως την Αναγέννηση και τις Μεγάλες Ανακαλύψεις.</p>
+        <div class="timeline-grid">
+          <div class='timeline-item'><div class='timeline-date'>4ος αιώνας</div><div class='timeline-text'>Ξεκινά στην Αίγυπτο το μοναχικό κίνημα, που αργότερα θα γνωρίσει μεγάλη ανάπτυξη και στο Βυζάντιο.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>768–814</div><div class='timeline-text'>Η εποχή του Καρλομάγνου και η διαμόρφωση του μεγάλου Φραγκικού Βασιλείου.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>800</div><div class='timeline-text'>Ο πάπας στέφει τον Καρλομάγνο αυτοκράτορα στη Ρώμη.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>8ος–13ος αιώνας</div><div class='timeline-text'>Η φεουδαρχία κυριαρχεί στη Δυτική Ευρώπη και οργανώνει την κοινωνία γύρω από τη γη και τις σχέσεις υποτέλειας.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>843</div><div class='timeline-text'>Η Συνθήκη του Βερντέν διασπά το κράτος του Καρλομάγνου σε τρία μέρη.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>9ος αιώνας</div><div class='timeline-text'>Το Άγιο Όρος αναδεικνύεται σε σημαντικό κέντρο του μοναχισμού.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>962</div><div class='timeline-text'>Στη Γερμανία ενισχύεται η βασιλική εξουσία με τον Όθωνα Α΄.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>987</div><div class='timeline-text'>Στη Γαλλία αρχίζει η δυναστεία του Ούγου Καπέτου.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>1066</div><div class='timeline-text'>Στην Αγγλία ο Γουλιέλμος ο Κατακτητής θεμελιώνει νέα πολιτική ισορροπία.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>11ος αιώνας</div><div class='timeline-text'>Η θέση της γυναίκας στο Βυζάντιο βελτιώνεται και αυξάνεται η πρόσβασή της στην παιδεία.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>γύρω στο 1450</div><div class='timeline-text'>Η τυπογραφία του Γουτεμβέργιου επιταχύνει τη διάδοση των βιβλίων και των νέων ιδεών.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>1453</div><div class='timeline-text'>Μετά την Άλωση, πολλοί Έλληνες λόγιοι μεταφέρουν στη Δύση τη γνώση των αρχαίων ελληνικών γραμμάτων.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>1492</div><div class='timeline-text'>Ο Χριστόφορος Κολόμβος φτάνει στην Αμερική ταξιδεύοντας δυτικά.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>1494</div><div class='timeline-text'>Η Συνθήκη της Τορντεζίλας μοιράζει τον κόσμο ανάμεσα σε Πορτογάλους και Ισπανούς.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>1498</div><div class='timeline-text'>Ο Βάσκο ντε Γκάμα φτάνει στις Ινδίες κάνοντας τον περίπλου της Αφρικής.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>15ος–16ος αιώνας</div><div class='timeline-text'>Η Αναγέννηση και ο Ανθρωπισμός αλλάζουν την παιδεία, τις τέχνες και την εικόνα του ανθρώπου στην Ευρώπη.</div></div>
+          <div class='timeline-item'><div class='timeline-date'>1519–1522</div><div class='timeline-text'>Η αποστολή του Μαγγελάνου πραγματοποιεί τον πρώτο γύρο του κόσμου.</div></div>
+        </div>
+      </div>
+    </section><section id="units" class="section">
+
+              <div class="panel">
+        <h2 class="section-title">Ενότητες</h2>
+                <div class="units-grid">
+          <details class="unit-collapsible" id="unit-1">
+          <summary>
+            <span class="unit-summary-title">Η Καθημερινή Ζωή στο Βυζάντιο</span>
+            <span class="unit-summary-hint">Άνοιγμα</span>
+          </summary>
+          <div class="unit-collapsible-body"><h4>1. Οικογένεια και Γυναίκα</h4><ul class='point-list'><li>Ο νόμος επέτρεπε τον γάμο από τα 12 χρόνια για τα κορίτσια και από τα 14 για τα αγόρια.</li><li>Οι γυναίκες είχαν περιορισμένα δικαιώματα, σπάνια συμμετείχαν στα κοινά και συνήθως κυκλοφορούσαν με καλυμμένο πρόσωπο.</li><li>Μετά τον 11ο αιώνα η θέση τους βελτιώθηκε και απέκτησαν μεγαλύτερη πρόσβαση στην παιδεία.</li><li>Τα επώνυμα καθιερώθηκαν σταδιακά, ξεκινώντας από μεγάλες αριστοκρατικές οικογένειες, όπως οι Κομνηνοί.</li></ul><h4>2. Εκπαίδευση</h4><ul class='point-list'><li>Το σχολείο είχε δύο κύκλους σπουδών, έναν που ξεκινούσε στα 7 έτη και έναν στα 12.</li><li>Τα παιδιά μάθαιναν ανάγνωση, γραφή, μαθηματικά, αστρονομία και κλασικούς συγγραφείς, όπως τον Όμηρο.</li><li>Τα δίδακτρα ήταν συνήθη, αλλά υπήρχαν και δωρεάν επιλογές για ορφανά παιδιά.</li></ul><h4>3. Υγεία και Πρόνοια</h4><ul class='point-list'><li>Οι πόλεις διέθεταν νοσοκομεία και γιατρούς.</li><li>Παράλληλα, πολλοί άνθρωποι κατέφευγαν και στη μαγεία, επειδή οι δεισιδαιμονίες παρέμεναν ισχυρές.</li><li>Η Εκκλησία στήριζε τους αδύναμους με πτωχοκομεία και ορφανοτροφεία.</li></ul><h4>4. Κατοικία, Ένδυση, Διατροφή και Ψυχαγωγία</h4><ul class='point-list'><li>Οι πλούσιοι ζούσαν σε άνετα διώροφα σπίτια ή σε επαύλεις και φορούσαν λινά και μεταξωτά ρούχα.</li><li>Οι φτωχοί χωρικοί έμεναν σε μικρά μονόχωρα σπίτια, κάποιες φορές μαζί με τα ζώα τους, και φορούσαν απλά ρούχα.</li><li>Οι εύποροι απολάμβαναν πλούσια γεύματα, ενώ ο μέσος Βυζαντινός είχε πιο λιτή διατροφή.</li><li>Η διασκέδαση περιλάμβανε Ιππόδρομο, ταβέρνες, πανηγύρια, θαυματοποιούς και αποκριάτικες μεταμφιέσεις.</li></ul><h4>5. Μοναχισμός</h4><ul class='point-list'><li>Το μοναχικό κίνημα ξεκίνησε στην Αίγυπτο τον 4ο αιώνα.</li><li>Υπήρχαν δύο βασικές μορφές: οι ερημίτες και ο κοινοβιακός μοναχισμός με ηγούμενο.</li><li>Ο μοναχισμός γνώρισε μεγάλη ανάπτυξη μετά την Εικονομαχία.</li><li>Το σημαντικότερο κέντρο του έγινε το Άγιο Όρος ήδη από τον 9ο αιώνα.</li></ul></div>
+        </details> <details class="unit-collapsible" id="unit-2">
+          <summary>
+            <span class="unit-summary-title">Ο Καρλομάγνος και η εποχή του</span>
+            <span class="unit-summary-hint">Άνοιγμα</span>
+          </summary>
+          <div class="unit-collapsible-body"><h4>1. Μια νέα αυτοκρατορία</h4><ul class='point-list'><li>Ο Καρλομάγνος (768-814) δημιούργησε με συνεχείς πολέμους ένα τεράστιο χριστιανικό κράτος, το Φραγκικό Βασίλειο.</li><li>Τα Χριστούγεννα του 800 ο πάπας τον έστεψε αυτοκράτορα του Ρωμαϊκού Κράτους στη Ρώμη.</li><li>Η στέψη αυτή προκάλεσε έντονη διαμάχη με το Βυζάντιο, που θεωρούσε τον δικό του αυτοκράτορα μοναδικό διάδοχο της Ρωμαϊκής Αυτοκρατορίας.</li></ul><h4>2. Οργάνωση και Διάσπαση</h4><ul class='point-list'><li>Ο Καρλομάγνος οργάνωσε αποτελεσματικά τη διοίκηση και έφερε οικονομική ανάκαμψη και ανάπτυξη του εμπορίου.</li><li>Μετά τον θάνατό του, το κράτος χωρίστηκε σε τρία μέρη με τη Συνθήκη του Βερντέν (843).</li><li>Η διαίρεση αυτή χώρισε γλωσσικά την Ευρώπη και θεωρείται απαρχή της νεότερης ευρωπαϊκής ιστορίας.</li></ul><h4>3. Νέοι κίνδυνοι</h4><ul class='point-list'><li>Η Ευρώπη δεχόταν επιθέσεις από Σαρακηνούς από τον νότο, Μαγυάρους από την ανατολή και Νορμανδούς από τον βορρά.</li></ul><h4>4. Η Καρολίδεια Αναγέννηση</h4><ul class='point-list'><li>Για τη σωστή διοίκηση του κράτους χρειάζονταν μορφωμένοι υπάλληλοι, γραφείς και δάσκαλοι.</li><li>Ο Καρλομάγνος κάλεσε λογίους στην Αιξ-λα-Σαπέλ και φρόντισε να λειτουργούν σχολεία στα μοναστήρια.</li><li>Υποστήριξε την αντιγραφή βιβλίων με την πιο ευανάγνωστη καρολίδεια γραφή.</li><li>Η άνθηση των γραμμάτων και των τεχνών στην εποχή του ονομάστηκε Καρολίδεια Αναγέννηση.</li></ul></div>
+        </details> <details class="unit-collapsible" id="unit-3">
+          <summary>
+            <span class="unit-summary-title">Η Φεουδαρχία στη Δυτική Ευρώπη (8ος - 13ος αιώνας)</span>
+            <span class="unit-summary-hint">Άνοιγμα</span>
+          </summary>
+          <div class="unit-collapsible-body"><h4>1. Πώς γεννήθηκε η Φεουδαρχία (Αιτίες)</h4><ul class='point-list'><li>Στον Μεσαίωνα η γη ήταν η βασική πηγή πλούτου και δύναμης.</li><li>Μετά τις επιδρομές, οι αδύναμοι ζητούσαν προστασία από τους ισχυρούς γαιοκτήμονες και τους πρόσφεραν γη, αφοσίωση και υπηρεσίες.</li><li>Ο ακριβός στρατιωτικός εξοπλισμός οδήγησε βασιλιάδες και άρχοντες να μοιράζουν γαίες για να συντηρούνται οι πολεμιστές τους.</li></ul><h4>2. Το Φέουδο και το Συμβόλαιο</h4><ul class='point-list'><li>Το φέουδο ήταν η γη που παραχωρούσε ένας ανώτερος άρχοντας σε έναν κατώτερο, τον υποτελή ή βασάλο.</li><li>Ο άρχοντας έδινε γη και προστασία, ενώ ο υποτελής ορκιζόταν πίστη και υποταγή.</li><li>Η συμφωνία επικυρωνόταν με τελετή περιβολής και φεουδαρχικό συμβόλαιο.</li><li>Αν κάποιος δεν τηρούσε τις υποχρεώσεις του ή πέθαινε, το συμβόλαιο ακυρωνόταν.</li></ul><h4>3. Η Κοινωνική Πυραμίδα</h4><ul class='point-list'><li>Η κοινωνία χωριζόταν σε προνομιούχους, δηλαδή άρχοντες και κληρικούς, και στους ανθρώπους της εργασίας, δηλαδή τους χωρικούς.</li><li>Στην κορυφή βρισκόταν ο βασιλιάς και ακολουθούσαν οι ευγενείς, οι δούκες και οι ιππότες.</li><li>Στη βάση υπήρχαν ελεύθεροι γεωργοί, πάροικοι δεμένοι με τη γη και δούλοι χωρίς δικαιώματα.</li><li>Οι χωρικοί έκαναν αγγαρείες και πλήρωναν τον άρχοντα για τη χρήση μύλων και άλλων μέσων.</li></ul><h4>4. Αποτελέσματα</h4><ul class='point-list'><li>Η φεουδαρχία κομμάτιασε το κράτος σε πολλές μικρές ανεξάρτητες ηγεμονίες.</li><li>Μέσα από αυτή τη διαδικασία άρχισαν σταδιακά να διαμορφώνονται νεότερα κράτη, όπως η Γαλλία, η Γερμανία και η Αγγλία.</li></ul></div>
+        </details> <details class="unit-collapsible" id="unit-4">
+          <summary>
+            <span class="unit-summary-title">Οι Ανακαλύψεις (15ος - 16ος αιώνας)</span>
+            <span class="unit-summary-hint">Άνοιγμα</span>
+          </summary>
+          <div class="unit-collapsible-body"><h4>1. Γιατί ξεκίνησαν οι εξερευνήσεις; (Αιτίες)</h4><ul class='point-list'><li>Οι Ευρωπαίοι αναζητούσαν χρυσό, μπαχαρικά και αρώματα από την Ανατολή.</li><li>Οι Οθωμανοί έκλεισαν τους χερσαίους εμπορικούς δρόμους και οι Ευρωπαίοι στράφηκαν στη θάλασσα.</li><li>Η πυξίδα, ο αστρολάβος, οι πορτολάνοι και η καραβέλα έκαναν τα ταξίδια ασφαλέστερα και αποτελεσματικότερα.</li><li>Ενισχύθηκε και η ιδέα ότι η γη είναι σφαιρική.</li></ul><h4>2. Τα Μεγάλα Ταξίδια</h4><ul class='point-list'><li>Ο Βάσκο ντε Γκάμα έφτασε το 1498 στις Ινδίες κάνοντας τον περίπλου της Αφρικής.</li><li>Ο Χριστόφορος Κολόμβος, ταξιδεύοντας δυτικά για λογαριασμό της Ισπανίας, έφτασε το 1492 στην Αμερική.</li><li>Ο Φερδινάνδος Μαγγελάνος πραγματοποίησε την πρώτη παγκόσμια περιπλάνηση το 1519-1522.</li></ul><h4>3. Κατακτήσεις και Συνέπειες</h4><ul class='point-list'><li>Πορτογάλοι και Ισπανοί κατέκτησαν βίαια τις νέες χώρες και μοίρασαν τον κόσμο με τη Συνθήκη της Τορντεζίλας (1494).</li><li>Οι προκολομβιανοί πολιτισμοί υπέστησαν βίαιη καταστροφή, εκμετάλλευση, δουλεία και αποικιοκρατία.</li><li>Για την Ευρώπη, το εμπορικό κέντρο μεταφέρθηκε από τη Μεσόγειο στον Ατλαντικό.</li><li>Ο χρυσός και ο άργυρος ενίσχυσαν την αστική τάξη και η επαφή με νέους κόσμους ευνόησε επιστήμες όπως η γεωγραφία και η αστρονομία.</li></ul></div>
+        </details> <details class="unit-collapsible" id="unit-5">
+          <summary>
+            <span class="unit-summary-title">Αναγέννηση και Ανθρωπισμός (15ος - 16ος αιώνας)</span>
+            <span class="unit-summary-hint">Άνοιγμα</span>
+          </summary>
+          <div class="unit-collapsible-body"><h4>1. Τι ήταν η Αναγέννηση;</h4><ul class='point-list'><li>Ήταν ένα μεγάλο πνευματικό και καλλιτεχνικό κίνημα της Ευρώπης του 15ου και 16ου αιώνα.</li><li>Βασικό του χαρακτηριστικό ήταν η αναβίωση των αξιών της κλασικής αρχαιότητας.</li><li>Ξεκίνησε από πλούσιες ιταλικές πόλεις, όπως η Φλωρεντία και η Βενετία, με τη στήριξη μαικήνων.</li></ul><h4>2. Ο Ανθρωπισμός</h4><ul class='point-list'><li>Οι μορφωμένοι άνθρωποι στράφηκαν στη μελέτη και μετάφραση των αρχαίων συγγραφέων.</li><li>Στο κέντρο του ενδιαφέροντος βρέθηκε ο άνθρωπος, η κριτική σκέψη και η χαρά της ζωής.</li><li>Ένας από τους σημαντικότερους ανθρωπιστές ήταν ο Έρασμος.</li></ul><h4>3. Ο &quot;Οικουμενικός Άνθρωπος&quot;</h4><ul class='point-list'><li>Οι ανθρωπιστές πρόβαλαν το ιδανικό του homo universalis, του ανθρώπου που αναπτύσσει όλες του τις ικανότητες.</li><li>Για αυτό ιδρύθηκαν νέα σχολεία και πανεπιστήμια.</li></ul><h4>4. Οι Έλληνες Λόγιοι και η Τυπογραφία</h4><ul class='point-list'><li>Πολλοί Έλληνες λόγιοι πήγαν στη Δύση γύρω στα χρόνια της Άλωσης και δίδαξαν τα αρχαία ελληνικά γράμματα.</li><li>Η τυπογραφία του Γουτεμβέργιου βοήθησε να τυπώνονται γρήγορα τα βιβλία και να διαδίδονται οι νέες ιδέες.</li></ul><h4>5. Γράμματα και Επιστήμες</h4><ul class='point-list'><li>Σπουδαίοι συγγραφείς, όπως ο Σαίξπηρ και ο Θερβάντες, έγραψαν στις εθνικές τους γλώσσες.</li><li>Στην πολιτική ξεχώρισε ο Μακιαβέλλι.</li><li>Στις επιστήμες η εικόνα του κόσμου άλλαξε χάρη στον Κοπέρνικο και τον Γαλιλαίο.</li></ul><h4>6. Η Τέχνη</h4><ul class='point-list'><li>Η αρχιτεκτονική, η ζωγραφική και η γλυπτική εμπνεύστηκαν από την αρχαιότητα.</li><li>Οι καλλιτέχνες απέδωσαν το ανθρώπινο σώμα και τη φύση με νέες τεχνικές, όπως η προοπτική.</li><li>Κορυφαίοι δημιουργοί ήταν ο Λεονάρντο ντα Βίντσι, ο Μιχαήλ Άγγελος και ο Ελ Γκρέκο.</li></ul></div>
+        </details>
+        </div>
+      </div>
+    </section><section id="flashcards" class="section">
+      <div class="panel">
+        <h2 class="section-title">Κάρτες Μνήμης</h2>
+        <p class="section-intro">Πάτησε πάνω σε κάθε κάρτα για να δεις την απάντηση. </p>
+        <div class="flashcard-container">
+          <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">12 και 14 ετών</div>
+                <div class="flashcard-back">Οι μικρότερες ηλικίες γάμου που επέτρεπε ο νόμος για κορίτσια και αγόρια στο Βυζάντιο.</div>
+            </div>
+        </div> <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Άγιο Όρος</div>
+                <div class="flashcard-back">Το σημαντικότερο κέντρο του βυζαντινού μοναχισμού ήδη από τον 9ο αιώνα.</div>
+            </div>
+        </div> <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Καρλομάγνος</div>
+                <div class="flashcard-back">Ο Φράγκος ηγεμόνας που στέφθηκε αυτοκράτορας το 800 στη Ρώμη.</div>
+            </div>
+        </div> <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Συνθήκη του Βερντέν</div>
+                <div class="flashcard-back">Η συμφωνία του 843 που διέσπασε το κράτος του Καρλομάγνου σε τρία μέρη.</div>
+            </div>
+        </div> <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Καρολίδεια γραφή</div>
+                <div class="flashcard-back">Η νέα, πιο ευανάγνωστη γραφή που ενίσχυσε την αντιγραφή βιβλίων στην εποχή του Καρλομάγνου.</div>
+            </div>
+        </div> <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Φέουδο</div>
+                <div class="flashcard-back">Η έκταση γης που παραχωρούσε ένας ανώτερος άρχοντας σε έναν υποτελή.</div>
+            </div>
+        </div> <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Πάροικος</div>
+                <div class="flashcard-back">Χωρικός δεμένος με τη γη του άρχοντα, με περιορισμένες ελευθερίες.</div>
+            </div>
+        </div> <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Καραβέλα</div>
+                <div class="flashcard-back">Το νέο, γρήγορο και ασφαλές πλοίο που βοήθησε τα μεγάλα θαλασσινά ταξίδια.</div>
+            </div>
+        </div> <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">1492</div>
+                <div class="flashcard-back">Η χρονολογία του ταξιδιού του Κολόμβου στην Αμερική.</div>
+            </div>
+        </div> <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Τορντεζίλας</div>
+                <div class="flashcard-back">Η συνθήκη του 1494 με την οποία Πορτογάλοι και Ισπανοί μοίρασαν τον κόσμο.</div>
+            </div>
+        </div> <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Ανθρωπισμός</div>
+                <div class="flashcard-back">Το ρεύμα που έφερε στο κέντρο του ενδιαφέροντος τον άνθρωπο, την κριτική σκέψη και τα αρχαία γράμματα.</div>
+            </div>
+        </div> <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Homo universalis</div>
+                <div class="flashcard-back">Το ιδανικό του οικουμενικού ανθρώπου που καλλιεργεί όλες του τις ικανότητες.</div>
+            </div>
+        </div> <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Γουτεμβέργιος</div>
+                <div class="flashcard-back">Ο εφευρέτης της τυπογραφίας που επιτάχυνε τη διάδοση των ιδεών στην Ευρώπη.</div>
+            </div>
+        </div> <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">Προοπτική</div>
+                <div class="flashcard-back">Η καλλιτεχνική τεχνική που δίνει αίσθηση βάθους στη ζωγραφική της Αναγέννησης.</div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </section><section id="sources" class="section">
+      <div class="panel">
+        <h2 class="section-title">Βιβλιοθήκη Πηγών</h2>
+
+        <div class="source-layout">
+          <div class="source-sidebar">
+            <label for="sourceSelect">Επίλεξε πηγή</label>
+            <select id="sourceSelect" class="source-selector" onchange="updateSource()"></select>
+            <div class="source-count" id="sourceCount"></div>
+          </div>
+          <div class="source-main">
+            <h3 id="sourceTitle"></h3>
+            <div class="source-box" id="sourceText"></div>
+            <div class="source-author" id="sourceAuthor"></div>
+            <div class="source-tip" id="sourceTip"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <span class="footer-strong">Δημιουργία: Παναγιώτης Δόμβρος, Εκπαιδευτικός Αγγλικής Γλώσσας &amp; Θεατρολόγος, Διευθυντής 1ου Γυμνασίου Πυλαίας</span>
+  </footer>
+
+  <script>
+    const sourcesData = [{"label": "Καρλομάγνος: Μην παραμελείτε τα γράμματα", "title": "Μην παραμελείτε τα γράμματα", "text": "«Γιατί είναι ωφέλιμο οι επισκοπές και τα μοναστήρια, τα οποία ανήκουν, με τη θέληση του Χριστού, στην επικράτειά μας [...] να έδειχναν επίσης ενδιαφέρον για την καλλιέργεια των γραμμάτων [...]. Ακόμα και στα πρόσφατα χρόνια, σε γράμματα που μας έγραψαν από διάφορα μοναστήρια να μας πληροφορήσουν ότι οι αδελφοί που έμειναν σ' αυτά προσεύχονταν για λογαριασμό μας, διαπιστώσαμε ότι σε πολλά απ' αυτά τα γράμματα υπήρχαν σωστές σκέψεις, αλλά αδέξια διατυπωμένες [...] από έλλειψη μόρφωσης [...] Γι' αυτό σας συνιστούμε να μην παραμελείτε την καλλιέργεια των γραμμάτων. Γι' αυτή τη δουλειά πρέπει να διαλέξετε ανθρώπους, που να έχουν και τη θέληση και την ικανότητα να μάθουν και να διδάξουν και τους άλλους. Και αυτό πρέπει να γίνει με το ζήλο με τον οποίο σας το ζητούμε.»", "author": "Από την επιστολή του Καρλομάγνου προς τον αβά Μπώγκουλφ, στο: Μάρτζορι Ρόουλιν, Η καθημερινή ζωή στο Μεσαίωνα, εκδ. Παπαδήμα, Αθήνα 1992, σ. 26-27.", "tip": "Η πηγή δείχνει ότι ο Καρλομάγνος συνέδεε την καλή διοίκηση και τη θρησκευτική ζωή με τη μόρφωση· είναι ιδανική για να τεκμηριώσεις την Καρολίδεια Αναγέννηση."}, {"label": "Αναγέννηση: Ο ανθρωπιστής δάσκαλος και η νέα αγωγή", "title": "Ο ανθρωπιστής δάσκαλος και η νέα αγωγή", "text": "«Ο Βιτορίνο ντα Φέλτρε αντιπροσώπευε την άποψη ότι ο δάσκαλος μπορεί να προσφέρει με ελκυστικό τρόπο. Ο ίδιος δίδασκε ανάγνωση και γραφή μέσω κινητών στοιχείων και τις στοιχειώδεις γνώσεις αριθμητικής με παιγνίδια [...] Στις κατώτερες τάξεις δίδασκε θρησκευτικά, ενώ στις ανώτερες επίκεντρο των μαθημάτων του ήταν η ελληνική και κυρίως η λατινική λογοτεχνία [...] Πάντα τόνιζε ότι η απόκτηση γνώσεων δεν αποβλέπει τόσο σε μια θεωρητική καλλιέργεια όσο στην αντιμετώπιση της καθημερινής ζωής.»", "author": "J. R. Hale, Fürsten, Künstler, Humanisten, Αμβούργο 1973, 50.", "tip": "Χρησιμοποίησέ την για να δείξεις ότι η αναγεννησιακή αγωγή ήθελε πιο ελκυστική διδασκαλία, κλασική παιδεία και πρακτική αξία της γνώσης."}];
+
+    function showSection(sectionId, btn) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(button => button.classList.remove('active'));
+      const target = document.getElementById(sectionId);
+      if (target) target.classList.add('active');
+      if (btn) btn.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function populateSources() {
+      const select = document.getElementById('sourceSelect');
+      select.innerHTML = '';
+      sourcesData.forEach((item, index) => {
+        const option = document.createElement('option');
+        option.value = index;
+        option.textContent = item.label;
+        select.appendChild(option);
+      });
+
+      const countEl = document.getElementById('sourceCount');
+      
+      updateSource();
+    }
+
+    function updateSource() {
+      const index = parseInt(document.getElementById('sourceSelect').value || '0', 10);
+      const data = sourcesData[index];
+      if (!data) return;
+      document.getElementById('sourceTitle').textContent = data.title;
+      document.getElementById('sourceText').textContent = data.text;
+      document.getElementById('sourceAuthor').textContent = data.author;
+      document.getElementById('sourceTip').innerHTML = `<strong>Πώς να την αξιοποιήσεις:</strong> ${data.tip}`;
+    }
+
+    function setAllDetails(isOpen) {
+      document.querySelectorAll('.fulltext-item').forEach(item => item.open = isOpen);
+    }
+
+    document.querySelectorAll('details').forEach(item => item.open = false);
+    populateSources();
+  </script>
+</body>
+</html>
